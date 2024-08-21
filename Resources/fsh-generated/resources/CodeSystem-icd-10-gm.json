@@ -1,0 +1,18 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "ICD10GM",
+  "id": "icd-10-gm",
+  "title": "ICD-10-GM",
+  "description": "Hier werden die von uns eingetragenen icd-10-gm codes eingepflegt bis das http://fhir.de/CodeSystem/bfarm/icd-10-gm endlich die offizielen codes anbietet",
+  "url": "http://fhir.odilab.de/CodeSystem/icd-10-gm",
+  "concept": [
+    {
+      "code": "H91.9",
+      "display": "Hörverlust",
+      "definition": "Hörverlust"
+    }
+  ],
+  "count": 1
+}

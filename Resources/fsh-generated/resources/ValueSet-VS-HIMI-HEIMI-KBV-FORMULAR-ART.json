@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "VS_HIMI_HEIMI_KBV_FORMULAR_ART",
+  "id": "VS-HIMI-HEIMI-KBV-FORMULAR-ART",
+  "title": "VS_HIMI_HEIMI_KBV_FORMULAR_ART",
+  "description": "Ein ValueSet, das sowohl ausgewählte Codes aus dem KBV Code-System als auch zusätzliche eigene Codes umfasst",
+  "url": "http://fhir.odilab.de/ValueSet/VS-HIMI-HEIMI-KBV-FORMULAR-ART",
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.odilab.de/CodeSystem/code-system-himi-heimi-formular-art"
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "resourceType": "Composition",
+  "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+  "meta": {
+    "profile": [
+      "http://fhir.odilab.de/StructureDefinition/CompositionHiMi"
+    ]
+  },
+  "extension": [
+    {
+      "valueCoding": {
+        "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN",
+        "code": "00"
+      },
+      "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis"
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "system": "https://fhir.odilab.de/ValueSet/VS_HIMI_HEIMI_KBV_FORMULAR_ART",
+        "code": "e15H"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+  },
+  "author": [
+    {
+      "type": "Practitioner",
+      "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+    },
+    {
+      "identifier": {
+        "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer",
+        "value": "Y/400/2107/36/999"
+      },
+      "type": "Device"
+    }
+  ],
+  "custodian": {
+    "reference": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
+  },
+  "section": [
+    {
+      "entry": [
+        {
+          "reference": "DeviceRequest/416b7bc3-7483-46ba-bc67-306bf671c569"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type",
+            "code": "PrescriptionHilfsmittel"
+          }
+        ]
+      }
+    },
+    {
+      "entry": [
+        {
+          "reference": "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569"
+        }
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type",
+            "code": "Coverage"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "title": "elektronische Arznei- Heil- Hilfsmittelverordnung",
+  "date": "2021-01-01"
+}

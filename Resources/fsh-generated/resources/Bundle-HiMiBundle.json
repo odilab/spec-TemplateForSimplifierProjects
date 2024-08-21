@@ -1,0 +1,556 @@
+{
+  "resourceType": "Bundle",
+  "id": "HiMiBundle",
+  "meta": {
+    "profile": [
+      "http://fhir.odilab.de/StructureDefinition/ERPBundleHiMi"
+    ]
+  },
+  "identifier": {
+    "system": "https://gematik.de/fhir/NamingSystem/PrescriptionID",
+    "value": "162.240.219.130.055.90"
+  },
+  "entry": [
+    {
+      "fullUrl": "Composition/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "meta": {
+          "profile": [
+            "http://fhir.odilab.de/StructureDefinition/CompositionHiMi"
+          ]
+        },
+        "extension": [
+          {
+            "valueCoding": {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN",
+              "code": "00"
+            },
+            "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis"
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "https://fhir.odilab.de/ValueSet/VS_HIMI_HEIMI_KBV_FORMULAR_ART",
+              "code": "e15H"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+        },
+        "author": [
+          {
+            "type": "Practitioner",
+            "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+          },
+          {
+            "identifier": {
+              "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer",
+              "value": "Y/400/2107/36/999"
+            },
+            "type": "Device"
+          }
+        ],
+        "custodian": {
+          "reference": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
+        },
+        "section": [
+          {
+            "entry": [
+              {
+                "reference": "DeviceRequest/416b7bc3-7483-46ba-bc67-306bf671c569"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type",
+                  "code": "PrescriptionHilfsmittel"
+                }
+              ]
+            }
+          },
+          {
+            "entry": [
+              {
+                "reference": "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type",
+                  "code": "Coverage"
+                }
+              ]
+            }
+          }
+        ],
+        "status": "final",
+        "title": "elektronische Arznei- Heil- Hilfsmittelverordnung",
+        "date": "2021-01-01"
+      }
+    },
+    {
+      "fullUrl": "PrescriptionDevice/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "resource": {
+        "resourceType": "DeviceRequest",
+        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "meta": {
+          "profile": [
+            "http://fhir.odilab.de/StructureDefinition/PrescriptionDevice"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/Folgeversorgung",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/KBV-EX-ERP-BVG-ODIL",
+            "valueBoolean": false
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://fhir.odilab.de/CodeSystem/icd-10-gm",
+                "code": "H91.9",
+                "display": "Hörverlust"
+              }
+            ]
+          }
+        ],
+        "codeCodeableConcept": {
+          "coding": [
+            {
+              "display": "Hörhilfe"
+            }
+          ],
+          "text": "Hörhilfe"
+        },
+        "parameter": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99915-2",
+                  "display": "Status Gehörgang Rechts"
+                }
+              ],
+              "text": "Normal"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99916-2",
+                  "display": "Status Trommelfell Rechts"
+                }
+              ],
+              "text": "Intakt"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99917-2",
+                  "display": "Hörhilfe notwendig Rechts"
+                }
+              ]
+            },
+            "valueBoolean": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99918-2",
+                  "display": "Hörweite Fl.Spr. Rechts"
+                }
+              ],
+              "text": "4-6 (gering)"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99919-2",
+                  "display": "Hörweite Um.Spr. Rechts"
+                }
+              ],
+              "text": "4-X (gering)"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99924-2",
+                  "display": "Tinnitushilfe notwendig Rechts"
+                }
+              ]
+            },
+            "valueBoolean": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99915-1",
+                  "display": "Status Gehörgang Links"
+                }
+              ],
+              "text": "Normal"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99916-1",
+                  "display": "Status Trommelfell Links"
+                }
+              ],
+              "text": "Intakt"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99917-1",
+                  "display": "Hörhilfe notwendig Links"
+                }
+              ]
+            },
+            "valueBoolean": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99918-1",
+                  "display": "Hörweite Fl.Spr. Links"
+                }
+              ],
+              "text": "4-6 (gering)"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99919-1",
+                  "display": "Hörweite Um.Spr. Links"
+                }
+              ],
+              "text": "4-X (gering)"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "99924-1",
+                  "display": "Tinnitushilfe notwendig Links"
+                }
+              ]
+            },
+            "valueBoolean": false
+          }
+        ],
+        "subject": {
+          "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+        },
+        "requester": {
+          "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+        },
+        "insurance": [
+          {
+            "reference": "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "authoredOn": "2021-01-01"
+      }
+    },
+    {
+      "fullUrl": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "GKV"
+                }
+              ]
+            },
+            "system": "http://fhir.de/sid/gkv/kvid-10",
+            "value": "X123456789"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Erika"
+            ],
+            "use": "official",
+            "family": "Musterfrau",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Musterfrau"
+                }
+              ]
+            }
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "Musterstrasse 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstrasse"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  }
+                ]
+              }
+            ],
+            "type": "both",
+            "city": "Musterstadt",
+            "postalCode": "12345",
+            "country": "D"
+          }
+        ],
+        "birthDate": "2002-02-02"
+      }
+    },
+    {
+      "fullUrl": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.1.0"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "LANR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR",
+            "value": "123456789"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Albert"
+            ],
+            "use": "official",
+            "family": "Arztmann",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Arztmann"
+                }
+              ]
+            }
+          }
+        ],
+        "qualification": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type",
+                  "code": "00"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung",
+                  "code": "Berufsbezeichnung"
+                }
+              ],
+              "text": "Arzt"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.1.0"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "BSNR"
+                }
+              ]
+            },
+            "system": "https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR",
+            "value": "123456789"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0201-123456789"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "Musterstrasse 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Musterstrasse"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  }
+                ]
+              }
+            ],
+            "type": "both",
+            "city": "Musterstadt",
+            "postalCode": "12345",
+            "country": "D"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "meta": {
+          "profile": [
+            "https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.1.0"
+          ]
+        },
+        "extension": [
+          {
+            "valueCoding": {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE",
+              "code": "00"
+            },
+            "url": "http://fhir.de/StructureDefinition/gkv/besondere-personengruppe"
+          },
+          {
+            "valueCoding": {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP",
+              "code": "00"
+            },
+            "url": "http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen"
+          },
+          {
+            "valueCoding": {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS",
+              "code": "1"
+            },
+            "url": "http://fhir.de/StructureDefinition/gkv/versichertenart"
+          },
+          {
+            "valueCoding": {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP",
+              "code": "00"
+            },
+            "url": "http://fhir.de/StructureDefinition/gkv/wop"
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis",
+              "code": "GKV"
+            }
+          ]
+        },
+        "beneficiary": {
+          "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+        },
+        "payor": [
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "123456789"
+            },
+            "display": "KN Knappschaft"
+          }
+        ],
+        "status": "active"
+      }
+    }
+  ],
+  "type": "document",
+  "timestamp": "2021-01-01T00:00:00Z"
+}

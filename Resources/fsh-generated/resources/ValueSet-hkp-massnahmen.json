@@ -1,0 +1,46 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "HKPMassnahmen",
+  "id": "hkp-massnahmen",
+  "title": "HKP-Maßnahmen",
+  "description": "ValueSet für Maßnahmen der häuslichen Krankenpflege",
+  "url": "http://fhir.odilab.de/ValueSet/hkp-massnahmen",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "385763009",
+            "display": "Behandlungspflege"
+          },
+          {
+            "code": "78680009",
+            "display": "Grundpflege"
+          },
+          {
+            "code": "22510005",
+            "display": "Hauswirtschaftliche Versorgung"
+          },
+          {
+            "code": "18629005",
+            "display": "Medikamentengabe"
+          },
+          {
+            "code": "33747003",
+            "display": "Blutzuckermessung"
+          },
+          {
+            "code": "225358003",
+            "display": "Kompressionsbehandlung"
+          },
+          {
+            "code": "385949008",
+            "display": "Wundversorgung"
+          }
+        ]
+      }
+    ]
+  }
+}

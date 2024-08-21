@@ -1,0 +1,43 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CS_HIMI_HEIMI_FORMULAR_ART",
+  "id": "code-system-himi-heimi-formular-art",
+  "title": "CS_HIMI_HEIMI_FORMULAR_ART",
+  "description": "Ein Code-System für zusätzliche Codes, die nicht im KBV Code-System enthalten sind",
+  "url": "http://fhir.odilab.de/CodeSystem/code-system-himi-heimi-formular-art",
+  "concept": [
+    {
+      "code": "e04",
+      "display": "Fahrtkosten",
+      "definition": "Fahrtkosten"
+    },
+    {
+      "code": "e08",
+      "display": "Sehhilfe",
+      "definition": "Sehhilfe"
+    },
+    {
+      "code": "e08AH",
+      "display": "Sehilfe",
+      "definition": "Sehhilfe"
+    },
+    {
+      "code": "e12H",
+      "display": "Pflegedienst",
+      "definition": "häusliche Pflege"
+    },
+    {
+      "code": "e15H",
+      "display": "Hörhilfe",
+      "definition": "Hörhilfe"
+    },
+    {
+      "code": "e16H",
+      "display": "Hilfsmittel",
+      "definition": "Hilfsmittel"
+    }
+  ],
+  "count": 6
+}

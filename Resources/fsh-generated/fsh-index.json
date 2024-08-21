@@ -1,0 +1,242 @@
+[
+  {
+    "outputFile": "Bundle-HiMiBundle.json",
+    "fshName": "HiMiBundle_e15H",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 2,
+    "endLine": 21
+  },
+  {
+    "outputFile": "CarePlan-BeispielHKPVerordnung.json",
+    "fshName": "BeispielHKPVerordnung",
+    "fshType": "Instance",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 123,
+    "endLine": 152
+  },
+  {
+    "outputFile": "CodeSystem-code-system-himi-heimi-formular-art.json",
+    "fshName": "CS_HIMI_HEIMI_FORMULAR_ART",
+    "fshType": "CodeSystem",
+    "fshFile": "ODIL_VS_Formular_Art.fsh",
+    "startLine": 2,
+    "endLine": 11
+  },
+  {
+    "outputFile": "CodeSystem-icd-10-gm.json",
+    "fshName": "ICD10GM",
+    "fshType": "CodeSystem",
+    "fshFile": "ODIL_VS_ICD10GM.fsh",
+    "startLine": 1,
+    "endLine": 5
+  },
+  {
+    "outputFile": "Composition-416b7bc3-7483-46ba-bc67-306bf671c569.json",
+    "fshName": "CompositionHiMi",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 23,
+    "endLine": 39
+  },
+  {
+    "outputFile": "Coverage-416b7bc3-7483-46ba-bc67-306bf671c569.json",
+    "fshName": "Coverage_Example",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 161,
+    "endLine": 179
+  },
+  {
+    "outputFile": "DeviceRequest-416b7bc3-7483-46ba-bc67-306bf671c569.json",
+    "fshName": "PrescriptionDevice",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 44,
+    "endLine": 108
+  },
+  {
+    "outputFile": "Organization-416b7bc3-7483-46ba-bc67-306bf671c569.json",
+    "fshName": "Organization_Example",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 146,
+    "endLine": 159
+  },
+  {
+    "outputFile": "Patient-416b7bc3-7483-46ba-bc67-306bf671c569.json",
+    "fshName": "Patient_Example",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 111,
+    "endLine": 131
+  },
+  {
+    "outputFile": "Practitioner-416b7bc3-7483-46ba-bc67-306bf671c569.json",
+    "fshName": "Practitioner_Example",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 133,
+    "endLine": 144
+  },
+  {
+    "outputFile": "StructureDefinition-CompositionHiMi.json",
+    "fshName": "CompositionHiMi",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_Composition_HiMi.fsh",
+    "startLine": 6,
+    "endLine": 254
+  },
+  {
+    "outputFile": "StructureDefinition-ERPBundleHiMi.json",
+    "fshName": "ERP_Bundle_HiMi",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_Bundle_HiMi.fsh",
+    "startLine": 1,
+    "endLine": 94
+  },
+  {
+    "outputFile": "StructureDefinition-Folgeversorgung.json",
+    "fshName": "Folgeversorgung",
+    "fshType": "Extension",
+    "fshFile": "ODIL_EX_Folgeversorgung.fsh",
+    "startLine": 1,
+    "endLine": 7
+  },
+  {
+    "outputFile": "StructureDefinition-KBV-EX-ERP-BVG-ODIL.json",
+    "fshName": "KBV_EX_ERP_BVG_ODIL",
+    "fshType": "Extension",
+    "fshFile": "ODIL_EX_KBV_EX_ERP_BVG.fsh",
+    "startLine": 1,
+    "endLine": 8
+  },
+  {
+    "outputFile": "StructureDefinition-PrescriptionDevice.json",
+    "fshName": "PrescriptionDevice",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_Prescription_Device.fsh",
+    "startLine": 3,
+    "endLine": 65
+  },
+  {
+    "outputFile": "StructureDefinition-Unfallinformation.json",
+    "fshName": "Unfallinformation",
+    "fshType": "Extension",
+    "fshFile": "ODIL_EX_Accident.fsh",
+    "startLine": 1,
+    "endLine": 14
+  },
+  {
+    "outputFile": "StructureDefinition-blutzuckermessung-details.json",
+    "fshName": "BlutzuckermessungDetails",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 92,
+    "endLine": 97
+  },
+  {
+    "outputFile": "StructureDefinition-einschraenkungen.json",
+    "fshName": "Einschraenkungen",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 7,
+    "endLine": 11
+  },
+  {
+    "outputFile": "StructureDefinition-erstverordnung.json",
+    "fshName": "Erstverordnung",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 13,
+    "endLine": 17
+  },
+  {
+    "outputFile": "StructureDefinition-folgeverordnung.json",
+    "fshName": "Folgeverordnung",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 19,
+    "endLine": 23
+  },
+  {
+    "outputFile": "StructureDefinition-haeusliche-krankenpflege-verordnung.json",
+    "fshName": "HaeuslicheKrankenpflegeVerordnung",
+    "fshType": "Profile",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 38,
+    "endLine": 65
+  },
+  {
+    "outputFile": "StructureDefinition-kompressionsbehandlung-details.json",
+    "fshName": "KompressionsbehandlungDetails",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 99,
+    "endLine": 104
+  },
+  {
+    "outputFile": "StructureDefinition-medikamentengabe-details.json",
+    "fshName": "MedikamentengabeDetails",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 81,
+    "endLine": 90
+  },
+  {
+    "outputFile": "StructureDefinition-ser.json",
+    "fshName": "SER",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 31,
+    "endLine": 35
+  },
+  {
+    "outputFile": "StructureDefinition-sonstige-massnahmen-details.json",
+    "fshName": "SonstigeMassnahmenDetails",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 115,
+    "endLine": 120
+  },
+  {
+    "outputFile": "StructureDefinition-unfall.json",
+    "fshName": "Unfall",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 25,
+    "endLine": 29
+  },
+  {
+    "outputFile": "StructureDefinition-wundversorgung-details.json",
+    "fshName": "WundversorgungDetails",
+    "fshType": "Extension",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 106,
+    "endLine": 113
+  },
+  {
+    "outputFile": "ValueSet-VS-HIMI-HEIMI-KBV-FORMULAR-ART.json",
+    "fshName": "VS_HIMI_HEIMI_KBV_FORMULAR_ART",
+    "fshType": "ValueSet",
+    "fshFile": "ODIL_VS_Formular_Art.fsh",
+    "startLine": 15,
+    "endLine": 20
+  },
+  {
+    "outputFile": "ValueSet-hkp-massnahmen.json",
+    "fshName": "HKPMassnahmen",
+    "fshType": "ValueSet",
+    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "startLine": 68,
+    "endLine": 78
+  },
+  {
+    "outputFile": "ValueSet-valueSet-icd-10-gm.json",
+    "fshName": "ICD10GM",
+    "fshType": "ValueSet",
+    "fshFile": "ODIL_VS_ICD10GM.fsh",
+    "startLine": 7,
+    "endLine": 11
+  }
+]

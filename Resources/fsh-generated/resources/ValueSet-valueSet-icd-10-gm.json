@@ -1,0 +1,16 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ICD10GM",
+  "id": "valueSet-icd-10-gm",
+  "title": "ICD10GM",
+  "description": "Dieses ValueSet enthält die von uns eingetragenen icd-10-gm codes bis das http://fhir.de/CodeSystem/bfarm/icd-10-gm endlich die offizielen codes anbietet und man http://fhir.de/ValueSet/bfarm/icd-10-gm verwenden kann",
+  "url": "http://fhir.odilab.de/ValueSet/valueSet-icd-10-gm",
+  "compose": {
+    "include": [
+      {
+        "system": "http://fhir.odilab.de/CodeSystem/icd-10-gm"
+      }
+    ]
+  }
+}

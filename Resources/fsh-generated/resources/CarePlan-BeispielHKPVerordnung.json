@@ -1,0 +1,135 @@
+{
+  "resourceType": "CarePlan",
+  "id": "BeispielHKPVerordnung",
+  "meta": {
+    "profile": [
+      "http://fhir.odilab.de/StructureDefinition/haeusliche-krankenpflege-verordnung"
+    ]
+  },
+  "period": {
+    "start": "2024-07-01",
+    "end": "2024-07-15"
+  },
+  "careTeam": [
+    {
+      "reference": "CareTeam/example"
+    }
+  ],
+  "addresses": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+          "valueDateTime": "2024-06-30"
+        }
+      ],
+      "reference": "Condition/example"
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/einschraenkungen",
+      "valueString": "Eingeschränkte Mobilität"
+    },
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/erstverordnung",
+      "valueBoolean": true
+    }
+  ],
+  "activity": [
+    {
+      "detail": {
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "productCodeableConcept",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "code": "372567009",
+                      "system": "http://snomed.info/sct",
+                      "display": "Insulin"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "dailyAmount",
+                "valueQuantity": {
+                  "value": 3,
+                  "code": "{count}",
+                  "system": "http://unitsofmeasure.org"
+                }
+              },
+              {
+                "url": "quantity",
+                "valueQuantity": {
+                  "value": 10,
+                  "code": "U",
+                  "system": "http://unitsofmeasure.org",
+                  "unit": "Units"
+                }
+              }
+            ],
+            "url": "http://fhir.odilab.de/StructureDefinition/medikamentengabe-details"
+          }
+        ],
+        "kind": "ServiceRequest",
+        "status": "scheduled",
+        "code": {
+          "coding": [
+            {
+              "code": "18629005",
+              "system": "http://snomed.info/sct",
+              "display": "Medikamentengabe"
+            }
+          ]
+        },
+        "description": "3x täglich 10 Einheiten Insulin"
+      }
+    },
+    {
+      "detail": {
+        "extension": [
+          {
+            "extension": [
+              {
+                "valueTiming": {
+                  "repeat": {
+                    "frequency": 3,
+                    "period": 1,
+                    "periodUnit": "d"
+                  }
+                },
+                "url": "scheduledTiming"
+              }
+            ],
+            "url": "http://fhir.odilab.de/StructureDefinition/blutzuckermessung-details"
+          }
+        ],
+        "kind": "ServiceRequest",
+        "status": "scheduled",
+        "code": {
+          "coding": [
+            {
+              "code": "33747003",
+              "system": "http://snomed.info/sct",
+              "display": "Blutzuckermessung"
+            }
+          ]
+        },
+        "description": "3x täglich Blutzucker messen"
+      }
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "created": "2024-06-30",
+  "author": {
+    "reference": "Practitioner/example"
+  }
+}
