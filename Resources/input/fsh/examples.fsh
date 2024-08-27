@@ -1,6 +1,6 @@
 //Fixed Values müssen nicht eingetragen werden, diese werden automatisch hinzugefügt
 Instance: HiMiBundle_e15H
-InstanceOf: ERP_Bundle_HiMi
+InstanceOf: ODIL_Bundle
 Usage: #example
 Title: "HiMiBundle"
 Description: "Ein Bundle, das eine Verordnung für ein Hörgerät enthält."
@@ -21,11 +21,51 @@ Description: "Ein Bundle, das eine Verordnung für ein Hörgerät enthält."
 * entry[Krankenversicherungsverhaeltnis].resource = Coverage_Example
 
 Instance: CompositionHiMi
-InstanceOf: CompositionHiMi
+InstanceOf: ODIL_Composition
 Usage: #example
 Title: "CompositionHiMi"
 Description: "Ein Dokument, das eine Verordnung für ein Hörgerät enthält."
 * id = "416b7bc3-7483-46ba-bc67-306bf671c569"
+* extension[Rechtsgrundlage].valueCoding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"
+* extension[Rechtsgrundlage].valueCoding.code = #00
+* status = #final
+* type.coding.code = #e15H
+* subject.reference = "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+* date = "2021-01-01"
+* author[Arzt].reference = "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+* author[Pruefnummer].identifier.value = "Y/400/2107/36/999"
+* custodian.reference = "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
+* section[Verordnung_Hilfsmittel].entry.reference = "DeviceRequest/416b7bc3-7483-46ba-bc67-306bf671c569"
+* section[Krankenversicherungsverhaeltnis].entry.reference = "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569"
+
+
+Instance: ODIL_Bundle
+InstanceOf: ODIL_Bundle
+Usage: #example
+Title: "ODIL-Bundle"
+Description: "Ein Bundle, das eine Verordnung für ein Hörgerät enthält."
+* id = "ODIL-Bundle"
+* identifier.value = "162.240.219.130.055.90"
+* timestamp = "2021-01-01T00:00:00Z"
+* entry[Dokumenteninformation].fullUrl = "Composition/Odil-Composition-Himi"
+* entry[Dokumenteninformation].resource = Odil-Composition
+* entry[VerordnungHilfsmittel].fullUrl = "PrescriptionDevice/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[VerordnungHilfsmittel].resource = PrescriptionDevice
+* entry[Patient].fullUrl = "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[Patient].resource = Patient_Example
+* entry[AusstellendeVerschreibendeVerantwortlichePerson].fullUrl = "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[AusstellendeVerschreibendeVerantwortlichePerson].resource = Practitioner_Example
+* entry[Einrichtung].fullUrl = "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[Einrichtung].resource = Organization_Example
+* entry[Krankenversicherungsverhaeltnis].fullUrl = "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[Krankenversicherungsverhaeltnis].resource = Coverage_Example
+
+Instance: Odil-Composition-Himi
+InstanceOf: ODIL_Composition
+Usage: #example
+Title: "Odil-CompositionHiMi"
+Description: "Ein Dokument, das eine Verordnung für ein Hörgerät enthält."
+* id = "Odil-Composition"
 * extension[Rechtsgrundlage].valueCoding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"
 * extension[Rechtsgrundlage].valueCoding.code = #00
 * status = #final
@@ -177,3 +217,79 @@ Description: "Ein Beispiel für ein Krankenversicherungsverhältnis."
 * beneficiary.reference = "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
 * payor.identifier.value = "123456789"
 * payor.display = "KN Knappschaft"
+
+
+// Beispiel-Instanz
+Instance: ODIL_CarePlan
+InstanceOf: ODIL_CarePlan
+Usage: #example
+Title: "Beispiel HKPR Verordnung"
+Description: "Beispiel für eine Verordnung häuslicher Krankenpflege"
+* id = "BeispielHKPVerordnung"
+* status = #active
+* intent = #order
+* subject = Reference(Patient_Example)
+* period.start = "2024-07-01"
+* period.end = "2024-07-15"
+* created = "2024-06-30"
+* author = Reference(Practitioner_Example)
+* careTeam = Reference(CareTeam/example)
+* addresses = Reference(Condition/example)
+* addresses.extension.url = "http://hl7.org/fhir/StructureDefinition/condition-assertedDate"
+* addresses.extension.valueDateTime = "2024-06-30"
+* extension[einschraenkungen].valueString = "Eingeschränkte Mobilität"
+* extension[erstverordnung].valueBoolean = true
+* activity[+].detail.kind = #ServiceRequest
+* activity[=].detail.status = #scheduled
+* activity[=].detail.code = $sct#18629005 "Medikamentengabe"
+* activity[=].detail.description = "3x täglich 10 Einheiten Insulin"
+* activity[=].detail.extension[MedikamentengabeDetails].extension[productCodeableConcept].valueCodeableConcept = $sct#372567009 "Insulin"
+* activity[=].detail.extension[MedikamentengabeDetails].extension[dailyAmount].valueQuantity = 3 '{count}'
+* activity[=].detail.extension[MedikamentengabeDetails].extension[quantity].valueQuantity = 10 'U' "Units"
+* activity[+].detail.kind = #ServiceRequest
+* activity[=].detail.status = #scheduled
+* activity[=].detail.code = $sct#33747003 "Blutzuckermessung"
+* activity[=].detail.description = "3x täglich Blutzucker messen"
+* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.frequency = 3
+* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.period = 1
+* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.periodUnit = #d
+
+Instance: ODIL_Bundle_CarePlan
+InstanceOf: ODIL_Bundle
+Usage: #example
+Title: "ODIL-Bundle-CarePlan"
+Description: "Ein Bundle, das eine Verordnung für ein Hörgerät enthält."
+* id = "ODIL-Bundle-CarePlan"
+* identifier.value = "162.240.219.130.055.90"
+* timestamp = "2021-01-01T00:00:00Z"
+* entry[Dokumenteninformation].fullUrl = "Composition/Odil-Composition-CarePlan"
+* entry[Dokumenteninformation].resource = Odil-Composition-CarePlan
+* entry[HaeuslicheKrankenpflegeVerordnung].fullUrl = "CarePlan/BeispielHKPVerordnung"
+* entry[HaeuslicheKrankenpflegeVerordnung].resource = ODIL_CarePlan
+* entry[Patient].fullUrl = "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[Patient].resource = Patient_Example
+* entry[AusstellendeVerschreibendeVerantwortlichePerson].fullUrl = "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[AusstellendeVerschreibendeVerantwortlichePerson].resource = Practitioner_Example
+* entry[Einrichtung].fullUrl = "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[Einrichtung].resource = Organization_Example
+* entry[Krankenversicherungsverhaeltnis].fullUrl = "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569"
+* entry[Krankenversicherungsverhaeltnis].resource = Coverage_Example
+
+
+Instance: Odil-Composition-CarePlan
+InstanceOf: ODIL_Composition
+Usage: #example
+Title: "Odil-Composition-CarePlan"
+Description: "Ein Dokument, das eine Verordnung für häusliche Krankenpflege enthält."
+* id = "Odil-Composition-CarePlan"
+* extension[Rechtsgrundlage].valueCoding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"
+* extension[Rechtsgrundlage].valueCoding.code = #00
+* status = #final
+* type.coding.code = #e15H
+* subject.reference = "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+* date = "2021-01-01"
+* author[Arzt] = Reference(Practitioner_Example)
+* author[Pruefnummer].identifier.value = "Y/400/2107/36/999"
+* custodian = Reference(Organization_Example)
+* section[Verordnung_HaeuslicheKrankenpflege].entry = Reference(ODIL_CarePlan)
+* section[Krankenversicherungsverhaeltnis].entry = Reference(Coverage_Example)

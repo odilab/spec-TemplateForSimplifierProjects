@@ -35,10 +35,10 @@ Description: "Kennzeichnung für SER"
 * value[x] only boolean
 
 // Profil für die Verordnung häuslicher Krankenpflege
-Profile: HaeuslicheKrankenpflegeVerordnung
+Profile: ODIL_CarePlan
 Parent: CarePlan
-Id: haeusliche-krankenpflege-verordnung
-Title: "Häusliche Krankenpflege Verordnung"
+Id: odil-careplan
+Title: "ODIL CarePlan"
 Description: "Dieses Profil repräsentiert die Verordnung häuslicher Krankenpflege basierend auf dem Muster 12."
 
 * status MS
@@ -119,34 +119,3 @@ Title: "Details zu sonstigen Maßnahmen"
     scheduledTiming 0..1
 * extension[scheduledTiming].value[x] only Timing
 
-// Beispiel-Instanz
-Instance: BeispielHKPVerordnung
-InstanceOf: HaeuslicheKrankenpflegeVerordnung
-Usage: #example
-* status = #active
-* intent = #order
-* subject = Reference(Patient/example)
-* period.start = "2024-07-01"
-* period.end = "2024-07-15"
-* created = "2024-06-30"
-* author = Reference(Practitioner/example)
-* careTeam = Reference(CareTeam/example)
-* addresses = Reference(Condition/example)
-* addresses.extension.url = "http://hl7.org/fhir/StructureDefinition/condition-assertedDate"
-* addresses.extension.valueDateTime = "2024-06-30"
-* extension[einschraenkungen].valueString = "Eingeschränkte Mobilität"
-* extension[erstverordnung].valueBoolean = true
-* activity[+].detail.kind = #ServiceRequest
-* activity[=].detail.status = #scheduled
-* activity[=].detail.code = $sct#18629005 "Medikamentengabe"
-* activity[=].detail.description = "3x täglich 10 Einheiten Insulin"
-* activity[=].detail.extension[MedikamentengabeDetails].extension[productCodeableConcept].valueCodeableConcept = $sct#372567009 "Insulin"
-* activity[=].detail.extension[MedikamentengabeDetails].extension[dailyAmount].valueQuantity = 3 '{count}'
-* activity[=].detail.extension[MedikamentengabeDetails].extension[quantity].valueQuantity = 10 'U' "Units"
-* activity[+].detail.kind = #ServiceRequest
-* activity[=].detail.status = #scheduled
-* activity[=].detail.code = $sct#33747003 "Blutzuckermessung"
-* activity[=].detail.description = "3x täglich Blutzucker messen"
-* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.frequency = 3
-* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.period = 1
-* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.periodUnit = #d

@@ -1,8 +1,8 @@
-Profile: ERP_Bundle_HiMi
+Profile: ODIL_Bundle
 Parent: Bundle
-Id: ERPBundleHiMi
-Title: "Hilfsmittelverordnung"
-Description: "Dieses Bundle vereint die Elemente des strukturierten Dokuments Hilfsmittelverordnung Muster 8 und 15"
+Id: ODIL-Bundle
+Title: "ODIL eVerordnungs Bundle"
+Description: "Dieses Profil repräsentiert die Verordnung von Hilfsmitteln basierend auf dem Muster 12."
 * obeys Composition-pflicht and typComposition and angabePruefnummer and angabePLZ and angabeNrAusstellendePerson and angabeBetriebsstaettennr and angabeRechtsgrundlage and Arztpraxis-1 and Arztpraxis-2 and Patient-1 and Patient-2  and unique-DeviceRequest
 * id 1.. MS
 * meta 1.. MS
@@ -48,49 +48,15 @@ Description: "Dieses Bundle vereint die Elemente des strukturierten Dokuments Hi
     Patient 0..1 MS and
     Einrichtung 1..1 MS and
     AusstellendeVerschreibendeVerantwortlichePerson 1..2 MS and
-    VerordnungHilfsmittel 0..1 MS
-* entry[Dokumenteninformation].resource only CompositionHiMi
-* entry[Dokumenteninformation].link ..0
-* entry[Dokumenteninformation].fullUrl 1.. MS
-* entry[Dokumenteninformation].resource 1.. MS
-* entry[Dokumenteninformation].search ..0
-* entry[Dokumenteninformation].request ..0
-* entry[Dokumenteninformation].response ..0
+    VerordnungHilfsmittel 0..1 MS and
+    HaeuslicheKrankenpflegeVerordnung 0..1 MS
+* entry[Dokumenteninformation].resource only ODIL_Composition
 * entry[Patient].resource only KBV_PR_FOR_Patient
-* entry[Patient].link ..0
-* entry[Patient].fullUrl 1.. MS
-* entry[Patient].resource 1.. MS
-* entry[Patient].search ..0
-* entry[Patient].request ..0
-* entry[Patient].response ..0
 * entry[Krankenversicherungsverhaeltnis].resource only KBV_PR_FOR_Coverage
-* entry[Krankenversicherungsverhaeltnis].link ..0
-* entry[Krankenversicherungsverhaeltnis].fullUrl 1.. MS
-* entry[Krankenversicherungsverhaeltnis].resource 1.. MS
-* entry[Krankenversicherungsverhaeltnis].search ..0
-* entry[Krankenversicherungsverhaeltnis].request ..0
-* entry[Krankenversicherungsverhaeltnis].response ..0
 * entry[Einrichtung].resource only KBV_PR_FOR_Organization
-* entry[Einrichtung].link ..0
-* entry[Einrichtung].fullUrl 1.. MS
-* entry[Einrichtung].resource 1.. MS
-* entry[Einrichtung].search ..0
-* entry[Einrichtung].request ..0
-* entry[Einrichtung].response ..0
 * entry[AusstellendeVerschreibendeVerantwortlichePerson].resource only KBV_PR_FOR_Practitioner
-* entry[AusstellendeVerschreibendeVerantwortlichePerson].link ..0
-* entry[AusstellendeVerschreibendeVerantwortlichePerson].fullUrl 1.. MS
-* entry[AusstellendeVerschreibendeVerantwortlichePerson].resource 1.. MS
-* entry[AusstellendeVerschreibendeVerantwortlichePerson].search ..0
-* entry[AusstellendeVerschreibendeVerantwortlichePerson].request ..0
-* entry[AusstellendeVerschreibendeVerantwortlichePerson].response ..0
 * entry[VerordnungHilfsmittel].resource only PrescriptionDevice
-* entry[VerordnungHilfsmittel].link ..0
-* entry[VerordnungHilfsmittel].fullUrl 1.. MS
-* entry[VerordnungHilfsmittel].resource 1.. MS
-* entry[VerordnungHilfsmittel].search ..0
-* entry[VerordnungHilfsmittel].request ..0
-* entry[VerordnungHilfsmittel].response ..0
+* entry[HaeuslicheKrankenpflegeVerordnung].resource only ODIL_CarePlan
 * signature ..1
 
 Invariant: Composition-pflicht

@@ -1,5 +1,4 @@
 [BeispielHKPVerordnung]: CarePlan-BeispielHKPVerordnung.html
-[CompositionHiMi]: StructureDefinition-CompositionHiMi.html
 [416b7bc3-7483-46ba-bc67-306bf671c569]: Composition-416b7bc3-7483-46ba-bc67-306bf671c569.html
 [416b7bc3-7483-46ba-bc67-306bf671c569]: Coverage-416b7bc3-7483-46ba-bc67-306bf671c569.html
 [CS_HIMI_HEIMI_FORMULAR_ART]: CodeSystem-code-system-himi-heimi-formular-art.html
@@ -12,13 +11,18 @@
 [Erstverordnung]: StructureDefinition-erstverordnung.html
 [Folgeverordnung]: StructureDefinition-folgeverordnung.html
 [Folgeversorgung]: StructureDefinition-Folgeversorgung.html
-[ERP_Bundle_HiMi]: StructureDefinition-ERPBundleHiMi.html
 [HiMiBundle]: Bundle-HiMiBundle.html
 [HKPMassnahmen]: ValueSet-hkp-massnahmen.html
-[HaeuslicheKrankenpflegeVerordnung]: StructureDefinition-haeusliche-krankenpflege-verordnung.html
 [ICD10GM]: CodeSystem-icd-10-gm.html
 [ICD10GM]: ValueSet-valueSet-icd-10-gm.html
 [KBV_EX_ERP_BVG_ODIL]: StructureDefinition-KBV-EX-ERP-BVG-ODIL.html
+[ODIL_CarePlan]: StructureDefinition-odil-careplan.html
+[ODIL_Bundle]: StructureDefinition-ODIL-Bundle.html
+[ODIL-Bundle]: Bundle-ODIL-Bundle.html
+[ODIL-Bundle-CarePlan]: Bundle-ODIL-Bundle-CarePlan.html
+[Odil-Composition-CarePlan]: Composition-Odil-Composition-CarePlan.html
+[Odil-Composition]: Composition-Odil-Composition.html
+[ODIL_Composition]: StructureDefinition-Odil-CompositionHiMi.html
 [416b7bc3-7483-46ba-bc67-306bf671c569]: Organization-416b7bc3-7483-46ba-bc67-306bf671c569.html
 [416b7bc3-7483-46ba-bc67-306bf671c569]: Patient-416b7bc3-7483-46ba-bc67-306bf671c569.html
 [416b7bc3-7483-46ba-bc67-306bf671c569]: Practitioner-416b7bc3-7483-46ba-bc67-306bf671c569.html

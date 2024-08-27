@@ -73,15 +73,9 @@
         "reference": {
           "reference": "CarePlan/BeispielHKPVerordnung"
         },
-        "name": "BeispielHKPVerordnung",
-        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/haeusliche-krankenpflege-verordnung"
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/CompositionHiMi"
-        },
-        "name": "CompositionHiMi",
-        "exampleBoolean": false
+        "name": "Beispiel HKPR Verordnung",
+        "description": "Beispiel für eine Verordnung häuslicher Krankenpflege",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/odil-careplan"
       },
       {
         "reference": {
@@ -89,7 +83,7 @@
         },
         "name": "CompositionHiMi",
         "description": "Ein Dokument, das eine Verordnung für ein Hörgerät enthält.",
-        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/CompositionHiMi"
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"
       },
       {
         "reference": {
@@ -176,19 +170,11 @@
       },
       {
         "reference": {
-          "reference": "StructureDefinition/ERPBundleHiMi"
-        },
-        "name": "Hilfsmittelverordnung",
-        "description": "Dieses Bundle vereint die Elemente des strukturierten Dokuments Hilfsmittelverordnung Muster 8 und 15",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
           "reference": "Bundle/HiMiBundle"
         },
         "name": "HiMiBundle",
         "description": "Ein Bundle, das eine Verordnung für ein Hörgerät enthält.",
-        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/ERPBundleHiMi"
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/ODIL-Bundle"
       },
       {
         "reference": {
@@ -196,14 +182,6 @@
         },
         "name": "HKP-Maßnahmen",
         "description": "ValueSet für Maßnahmen der häuslichen Krankenpflege",
-        "exampleBoolean": false
-      },
-      {
-        "reference": {
-          "reference": "StructureDefinition/haeusliche-krankenpflege-verordnung"
-        },
-        "name": "Häusliche Krankenpflege Verordnung",
-        "description": "Dieses Profil repräsentiert die Verordnung häuslicher Krankenpflege basierend auf dem Muster 12.",
         "exampleBoolean": false
       },
       {
@@ -228,6 +206,61 @@
         },
         "name": "KBV_EX_ERP_BVG_ODIL",
         "description": "(wird nur eingesetzt da KBV-EX-ERP-BVG nur für den MedicaionRequest zugelassen ist) \n\nKennzeichnung, ob diese Verordnung für Anspruchsberechtigte nach dem Bundesentschädigungsgesetz (BEG) oder für Anspruchsberechtigte nach dem Bundesversorgungsgesetz (BVG) erfolgt  \n\nfalse - kein BVG (Standardwert)\ntrue - BVG",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/odil-careplan"
+        },
+        "name": "ODIL CarePlan",
+        "description": "Dieses Profil repräsentiert die Verordnung häuslicher Krankenpflege basierend auf dem Muster 12.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/ODIL-Bundle"
+        },
+        "name": "ODIL eVerordnungs Bundle",
+        "description": "Dieses Profil repräsentiert die Verordnung von Hilfsmitteln basierend auf dem Muster 12.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "Bundle/ODIL-Bundle"
+        },
+        "name": "ODIL-Bundle",
+        "description": "Ein Bundle, das eine Verordnung für ein Hörgerät enthält.",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/ODIL-Bundle"
+      },
+      {
+        "reference": {
+          "reference": "Bundle/ODIL-Bundle-CarePlan"
+        },
+        "name": "ODIL-Bundle-CarePlan",
+        "description": "Ein Bundle, das eine Verordnung für ein Hörgerät enthält.",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/ODIL-Bundle"
+      },
+      {
+        "reference": {
+          "reference": "Composition/Odil-Composition-CarePlan"
+        },
+        "name": "Odil-Composition-CarePlan",
+        "description": "Ein Dokument, das eine Verordnung für häusliche Krankenpflege enthält.",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"
+      },
+      {
+        "reference": {
+          "reference": "Composition/Odil-Composition"
+        },
+        "name": "Odil-CompositionHiMi",
+        "description": "Ein Dokument, das eine Verordnung für ein Hörgerät enthält.",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/Odil-CompositionHiMi"
+        },
+        "name": "ODIL_Composition",
         "exampleBoolean": false
       },
       {

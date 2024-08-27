@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "HiMiBundle",
+  "id": "ODIL-Bundle-CarePlan",
   "meta": {
     "profile": [
       "http://fhir.odilab.de/StructureDefinition/ODIL-Bundle"
@@ -12,10 +12,10 @@
   },
   "entry": [
     {
-      "fullUrl": "Composition/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "fullUrl": "Composition/Odil-Composition-CarePlan",
       "resource": {
         "resourceType": "Composition",
-        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "id": "Odil-Composition-CarePlan",
         "meta": {
           "profile": [
             "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"
@@ -54,16 +54,21 @@
             "type": "Device"
           }
         ],
-        "custodian": {
-          "reference": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
-        },
         "section": [
           {
             "entry": [
               {
-                "reference": "DeviceRequest/416b7bc3-7483-46ba-bc67-306bf671c569"
+                "reference": "CarePlan/BeispielHKPVerordnung"
               }
-            ]
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type",
+                  "code": "PrescriptionHaeuslicheKrankenpflege"
+                }
+              ]
+            }
           },
           {
             "entry": [
@@ -83,208 +88,148 @@
         ],
         "status": "final",
         "title": "elektronische Arznei- Heil- Hilfsmittelverordnung",
-        "date": "2021-01-01"
+        "date": "2021-01-01",
+        "custodian": {
+          "reference": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
+        }
       }
     },
     {
-      "fullUrl": "PrescriptionDevice/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "fullUrl": "CarePlan/BeispielHKPVerordnung",
       "resource": {
-        "resourceType": "DeviceRequest",
-        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "resourceType": "CarePlan",
+        "id": "BeispielHKPVerordnung",
         "meta": {
           "profile": [
-            "http://fhir.odilab.de/StructureDefinition/PrescriptionDevice"
+            "http://fhir.odilab.de/StructureDefinition/odil-careplan"
           ]
         },
+        "period": {
+          "start": "2024-07-01",
+          "end": "2024-07-15"
+        },
+        "careTeam": [
+          {
+            "reference": "CareTeam/example"
+          }
+        ],
+        "addresses": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+                "valueDateTime": "2024-06-30"
+              }
+            ],
+            "reference": "Condition/example"
+          }
+        ],
         "extension": [
           {
-            "url": "http://fhir.odilab.de/StructureDefinition/Folgeversorgung",
-            "valueBoolean": false
+            "url": "http://fhir.odilab.de/StructureDefinition/einschraenkungen",
+            "valueString": "Eingeschränkte Mobilität"
           },
           {
-            "url": "http://fhir.odilab.de/StructureDefinition/KBV-EX-ERP-BVG-ODIL",
-            "valueBoolean": false
+            "url": "http://fhir.odilab.de/StructureDefinition/erstverordnung",
+            "valueBoolean": true
           }
         ],
-        "reasonCode": [
+        "activity": [
           {
-            "coding": [
-              {
-                "system": "http://fhir.odilab.de/CodeSystem/icd-10-gm",
-                "code": "H91.9",
-                "display": "Hörverlust"
-              }
-            ]
-          }
-        ],
-        "codeCodeableConcept": {
-          "coding": [
-            {
-              "display": "Hörhilfe"
-            }
-          ],
-          "text": "Hörhilfe"
-        },
-        "parameter": [
-          {
-            "code": {
-              "coding": [
+            "detail": {
+              "extension": [
                 {
-                  "system": "http://loinc.org",
-                  "code": "99915-2",
-                  "display": "Status Gehörgang Rechts"
+                  "extension": [
+                    {
+                      "url": "productCodeableConcept",
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "code": "372567009",
+                            "system": "http://snomed.info/sct",
+                            "display": "Insulin"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "url": "dailyAmount",
+                      "valueQuantity": {
+                        "value": 3,
+                        "code": "{count}",
+                        "system": "http://unitsofmeasure.org"
+                      }
+                    },
+                    {
+                      "url": "quantity",
+                      "valueQuantity": {
+                        "value": 10,
+                        "code": "U",
+                        "system": "http://unitsofmeasure.org",
+                        "unit": "Units"
+                      }
+                    }
+                  ],
+                  "url": "http://fhir.odilab.de/StructureDefinition/medikamentengabe-details"
                 }
               ],
-              "text": "Normal"
+              "kind": "ServiceRequest",
+              "status": "scheduled",
+              "code": {
+                "coding": [
+                  {
+                    "code": "18629005",
+                    "system": "http://snomed.info/sct",
+                    "display": "Medikamentengabe"
+                  }
+                ]
+              },
+              "description": "3x täglich 10 Einheiten Insulin"
             }
           },
           {
-            "code": {
-              "coding": [
+            "detail": {
+              "extension": [
                 {
-                  "system": "http://loinc.org",
-                  "code": "99916-2",
-                  "display": "Status Trommelfell Rechts"
+                  "extension": [
+                    {
+                      "valueTiming": {
+                        "repeat": {
+                          "frequency": 3,
+                          "period": 1,
+                          "periodUnit": "d"
+                        }
+                      },
+                      "url": "scheduledTiming"
+                    }
+                  ],
+                  "url": "http://fhir.odilab.de/StructureDefinition/blutzuckermessung-details"
                 }
               ],
-              "text": "Intakt"
+              "kind": "ServiceRequest",
+              "status": "scheduled",
+              "code": {
+                "coding": [
+                  {
+                    "code": "33747003",
+                    "system": "http://snomed.info/sct",
+                    "display": "Blutzuckermessung"
+                  }
+                ]
+              },
+              "description": "3x täglich Blutzucker messen"
             }
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99917-2",
-                  "display": "Hörhilfe notwendig Rechts"
-                }
-              ]
-            },
-            "valueBoolean": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99918-2",
-                  "display": "Hörweite Fl.Spr. Rechts"
-                }
-              ],
-              "text": "4-6 (gering)"
-            }
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99919-2",
-                  "display": "Hörweite Um.Spr. Rechts"
-                }
-              ],
-              "text": "4-X (gering)"
-            }
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99924-2",
-                  "display": "Tinnitushilfe notwendig Rechts"
-                }
-              ]
-            },
-            "valueBoolean": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99915-1",
-                  "display": "Status Gehörgang Links"
-                }
-              ],
-              "text": "Normal"
-            }
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99916-1",
-                  "display": "Status Trommelfell Links"
-                }
-              ],
-              "text": "Intakt"
-            }
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99917-1",
-                  "display": "Hörhilfe notwendig Links"
-                }
-              ]
-            },
-            "valueBoolean": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99918-1",
-                  "display": "Hörweite Fl.Spr. Links"
-                }
-              ],
-              "text": "4-6 (gering)"
-            }
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99919-1",
-                  "display": "Hörweite Um.Spr. Links"
-                }
-              ],
-              "text": "4-X (gering)"
-            }
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://loinc.org",
-                  "code": "99924-1",
-                  "display": "Tinnitushilfe notwendig Links"
-                }
-              ]
-            },
-            "valueBoolean": false
-          }
-        ],
-        "subject": {
-          "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
-        },
-        "requester": {
-          "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
-        },
-        "insurance": [
-          {
-            "reference": "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569"
           }
         ],
         "status": "active",
         "intent": "order",
-        "authoredOn": "2021-01-01"
+        "subject": {
+          "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+        },
+        "created": "2024-06-30",
+        "author": {
+          "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+        }
       }
     },
     {

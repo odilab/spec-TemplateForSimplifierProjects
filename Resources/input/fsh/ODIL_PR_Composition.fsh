@@ -3,9 +3,9 @@
 Alias: $KBV_EX_FOR_Legal_basis = https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis
 Alias: $KBV_EX_FOR_PKV_Tariff = https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_PKV_Tariff
 
-Profile: CompositionHiMi
+Profile: ODIL_Composition
 Parent: Composition
-Id: CompositionHiMi
+Id: Odil-CompositionHiMi
 * obeys -erp-subjectAndPrescription and -erp-coverageAndPrescription
 * id 1.. MS
 * meta 1.. MS
@@ -130,9 +130,32 @@ Id: CompositionHiMi
     Verordnung_Sprechstundenbedarf 0..1 MS and
     Krankenversicherungsverhaeltnis 0..1 MS and
     ASV-Ausuebung 0..1 MS and
-    Verordnung_Hilfsmittel 0..1
-* section[Verordnung_Hilfsmittel].title ..0
-* section[Verordnung_Hilfsmittel].code 1.. MS
+    Verordnung_Hilfsmittel 0..1 MS and
+    Verordnung_HaeuslicheKrankenpflege 0..1 MS
+* section[Verordnung_HaeuslicheKrankenpflege].title ..0
+* section[Verordnung_HaeuslicheKrankenpflege].code 1.. MS
+* section[Verordnung_HaeuslicheKrankenpflege].code.coding 1..1 MS
+* section[Verordnung_HaeuslicheKrankenpflege].code.coding.system 1.. MS
+* section[Verordnung_HaeuslicheKrankenpflege].code.coding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type" (exactly)
+* section[Verordnung_HaeuslicheKrankenpflege].code.coding.version ..0
+* section[Verordnung_HaeuslicheKrankenpflege].code.coding.code 1.. MS
+* section[Verordnung_HaeuslicheKrankenpflege].code.coding.code = #PrescriptionHaeuslicheKrankenpflege (exactly)
+* section[Verordnung_HaeuslicheKrankenpflege].code.coding.display ..0
+* section[Verordnung_HaeuslicheKrankenpflege].code.coding.userSelected ..0
+* section[Verordnung_HaeuslicheKrankenpflege].code.text ..0
+* section[Verordnung_HaeuslicheKrankenpflege].author ..0
+* section[Verordnung_HaeuslicheKrankenpflege].focus ..0
+* section[Verordnung_HaeuslicheKrankenpflege].text ..0
+* section[Verordnung_HaeuslicheKrankenpflege].mode ..0
+* section[Verordnung_HaeuslicheKrankenpflege].orderedBy ..0
+* section[Verordnung_HaeuslicheKrankenpflege].entry 1..1 MS
+* section[Verordnung_HaeuslicheKrankenpflege].entry only Reference(ODIL_CarePlan)
+* section[Verordnung_HaeuslicheKrankenpflege].entry.reference 1.. MS
+* section[Verordnung_HaeuslicheKrankenpflege].entry.type ..0
+* section[Verordnung_HaeuslicheKrankenpflege].entry.identifier ..0
+* section[Verordnung_HaeuslicheKrankenpflege].entry.display ..0
+* section[Verordnung_HaeuslicheKrankenpflege].emptyReason ..0
+* section[Verordnung_HaeuslicheKrankenpflege].section ..0
 * section[Verordnung_Hilfsmittel].code.coding 1..1 MS
 * section[Verordnung_Hilfsmittel].code.coding.system 1.. MS
 * section[Verordnung_Hilfsmittel].code.coding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type" (exactly)

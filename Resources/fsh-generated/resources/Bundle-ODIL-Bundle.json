@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "HiMiBundle",
+  "id": "ODIL-Bundle",
   "meta": {
     "profile": [
       "http://fhir.odilab.de/StructureDefinition/ODIL-Bundle"
@@ -12,10 +12,10 @@
   },
   "entry": [
     {
-      "fullUrl": "Composition/416b7bc3-7483-46ba-bc67-306bf671c569",
+      "fullUrl": "Composition/Odil-Composition-Himi",
       "resource": {
         "resourceType": "Composition",
-        "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+        "id": "Odil-Composition",
         "meta": {
           "profile": [
             "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"

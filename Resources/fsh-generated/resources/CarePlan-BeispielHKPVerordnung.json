@@ -3,7 +3,7 @@
   "id": "BeispielHKPVerordnung",
   "meta": {
     "profile": [
-      "http://fhir.odilab.de/StructureDefinition/haeusliche-krankenpflege-verordnung"
+      "http://fhir.odilab.de/StructureDefinition/odil-careplan"
     ]
   },
   "period": {
@@ -126,10 +126,10 @@
   "status": "active",
   "intent": "order",
   "subject": {
-    "reference": "Patient/example"
+    "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
   },
   "created": "2024-06-30",
   "author": {
-    "reference": "Practitioner/example"
+    "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
   }
 }

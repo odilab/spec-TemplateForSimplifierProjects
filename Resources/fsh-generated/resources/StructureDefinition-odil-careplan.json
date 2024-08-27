@@ -1,9 +1,9 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "haeusliche-krankenpflege-verordnung",
-  "url": "http://fhir.odilab.de/StructureDefinition/haeusliche-krankenpflege-verordnung",
-  "name": "HaeuslicheKrankenpflegeVerordnung",
-  "title": "Häusliche Krankenpflege Verordnung",
+  "id": "odil-careplan",
+  "url": "http://fhir.odilab.de/StructureDefinition/odil-careplan",
+  "name": "ODIL_CarePlan",
+  "title": "ODIL CarePlan",
   "status": "draft",
   "description": "Dieses Profil repräsentiert die Verordnung häuslicher Krankenpflege basierend auf dem Muster 12.",
   "fhirVersion": "4.0.1",

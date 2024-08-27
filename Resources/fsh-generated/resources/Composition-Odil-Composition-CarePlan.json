@@ -1,6 +1,6 @@
 {
   "resourceType": "Composition",
-  "id": "416b7bc3-7483-46ba-bc67-306bf671c569",
+  "id": "Odil-Composition-CarePlan",
   "meta": {
     "profile": [
       "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"
@@ -39,16 +39,21 @@
       "type": "Device"
     }
   ],
-  "custodian": {
-    "reference": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
-  },
   "section": [
     {
       "entry": [
         {
-          "reference": "DeviceRequest/416b7bc3-7483-46ba-bc67-306bf671c569"
+          "reference": "CarePlan/BeispielHKPVerordnung"
         }
-      ]
+      ],
+      "code": {
+        "coding": [
+          {
+            "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Section_Type",
+            "code": "PrescriptionHaeuslicheKrankenpflege"
+          }
+        ]
+      }
     },
     {
       "entry": [
@@ -68,5 +73,8 @@
   ],
   "status": "final",
   "title": "elektronische Arznei- Heil- Hilfsmittelverordnung",
-  "date": "2021-01-01"
+  "date": "2021-01-01",
+  "custodian": {
+    "reference": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
+  }
 }

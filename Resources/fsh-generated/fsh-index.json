@@ -8,12 +8,28 @@
     "endLine": 21
   },
   {
-    "outputFile": "CarePlan-BeispielHKPVerordnung.json",
-    "fshName": "BeispielHKPVerordnung",
+    "outputFile": "Bundle-ODIL-Bundle-CarePlan.json",
+    "fshName": "ODIL_Bundle_CarePlan",
     "fshType": "Instance",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
-    "startLine": 123,
-    "endLine": 152
+    "fshFile": "examples.fsh",
+    "startLine": 257,
+    "endLine": 276
+  },
+  {
+    "outputFile": "Bundle-ODIL-Bundle.json",
+    "fshName": "ODIL_Bundle",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 42,
+    "endLine": 61
+  },
+  {
+    "outputFile": "CarePlan-BeispielHKPVerordnung.json",
+    "fshName": "ODIL_CarePlan",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 223,
+    "endLine": 255
   },
   {
     "outputFile": "CodeSystem-code-system-himi-heimi-formular-art.json",
@@ -40,60 +56,60 @@
     "endLine": 39
   },
   {
+    "outputFile": "Composition-Odil-Composition-CarePlan.json",
+    "fshName": "Odil-Composition-CarePlan",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 279,
+    "endLine": 295
+  },
+  {
+    "outputFile": "Composition-Odil-Composition.json",
+    "fshName": "Odil-Composition-Himi",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 63,
+    "endLine": 79
+  },
+  {
     "outputFile": "Coverage-416b7bc3-7483-46ba-bc67-306bf671c569.json",
     "fshName": "Coverage_Example",
     "fshType": "Instance",
     "fshFile": "examples.fsh",
-    "startLine": 161,
-    "endLine": 179
+    "startLine": 201,
+    "endLine": 219
   },
   {
     "outputFile": "DeviceRequest-416b7bc3-7483-46ba-bc67-306bf671c569.json",
     "fshName": "PrescriptionDevice",
     "fshType": "Instance",
     "fshFile": "examples.fsh",
-    "startLine": 44,
-    "endLine": 108
+    "startLine": 84,
+    "endLine": 148
   },
   {
     "outputFile": "Organization-416b7bc3-7483-46ba-bc67-306bf671c569.json",
     "fshName": "Organization_Example",
     "fshType": "Instance",
     "fshFile": "examples.fsh",
-    "startLine": 146,
-    "endLine": 159
+    "startLine": 186,
+    "endLine": 199
   },
   {
     "outputFile": "Patient-416b7bc3-7483-46ba-bc67-306bf671c569.json",
     "fshName": "Patient_Example",
     "fshType": "Instance",
     "fshFile": "examples.fsh",
-    "startLine": 111,
-    "endLine": 131
+    "startLine": 151,
+    "endLine": 171
   },
   {
     "outputFile": "Practitioner-416b7bc3-7483-46ba-bc67-306bf671c569.json",
     "fshName": "Practitioner_Example",
     "fshType": "Instance",
     "fshFile": "examples.fsh",
-    "startLine": 133,
-    "endLine": 144
-  },
-  {
-    "outputFile": "StructureDefinition-CompositionHiMi.json",
-    "fshName": "CompositionHiMi",
-    "fshType": "Profile",
-    "fshFile": "ODIL_PR_Composition_HiMi.fsh",
-    "startLine": 6,
-    "endLine": 254
-  },
-  {
-    "outputFile": "StructureDefinition-ERPBundleHiMi.json",
-    "fshName": "ERP_Bundle_HiMi",
-    "fshType": "Profile",
-    "fshFile": "ODIL_PR_Bundle_HiMi.fsh",
-    "startLine": 1,
-    "endLine": 94
+    "startLine": 173,
+    "endLine": 184
   },
   {
     "outputFile": "StructureDefinition-Folgeversorgung.json",
@@ -110,6 +126,22 @@
     "fshFile": "ODIL_EX_KBV_EX_ERP_BVG.fsh",
     "startLine": 1,
     "endLine": 8
+  },
+  {
+    "outputFile": "StructureDefinition-ODIL-Bundle.json",
+    "fshName": "ODIL_Bundle",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_Bundle.fsh",
+    "startLine": 1,
+    "endLine": 60
+  },
+  {
+    "outputFile": "StructureDefinition-Odil-CompositionHiMi.json",
+    "fshName": "ODIL_Composition",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_Composition.fsh",
+    "startLine": 6,
+    "endLine": 277
   },
   {
     "outputFile": "StructureDefinition-PrescriptionDevice.json",
@@ -131,7 +163,7 @@
     "outputFile": "StructureDefinition-blutzuckermessung-details.json",
     "fshName": "BlutzuckermessungDetails",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 92,
     "endLine": 97
   },
@@ -139,7 +171,7 @@
     "outputFile": "StructureDefinition-einschraenkungen.json",
     "fshName": "Einschraenkungen",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 7,
     "endLine": 11
   },
@@ -147,7 +179,7 @@
     "outputFile": "StructureDefinition-erstverordnung.json",
     "fshName": "Erstverordnung",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 13,
     "endLine": 17
   },
@@ -155,23 +187,15 @@
     "outputFile": "StructureDefinition-folgeverordnung.json",
     "fshName": "Folgeverordnung",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 19,
     "endLine": 23
-  },
-  {
-    "outputFile": "StructureDefinition-haeusliche-krankenpflege-verordnung.json",
-    "fshName": "HaeuslicheKrankenpflegeVerordnung",
-    "fshType": "Profile",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
-    "startLine": 38,
-    "endLine": 65
   },
   {
     "outputFile": "StructureDefinition-kompressionsbehandlung-details.json",
     "fshName": "KompressionsbehandlungDetails",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 99,
     "endLine": 104
   },
@@ -179,15 +203,23 @@
     "outputFile": "StructureDefinition-medikamentengabe-details.json",
     "fshName": "MedikamentengabeDetails",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 81,
     "endLine": 90
+  },
+  {
+    "outputFile": "StructureDefinition-odil-careplan.json",
+    "fshName": "ODIL_CarePlan",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
+    "startLine": 38,
+    "endLine": 65
   },
   {
     "outputFile": "StructureDefinition-ser.json",
     "fshName": "SER",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 31,
     "endLine": 35
   },
@@ -195,7 +227,7 @@
     "outputFile": "StructureDefinition-sonstige-massnahmen-details.json",
     "fshName": "SonstigeMassnahmenDetails",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 115,
     "endLine": 120
   },
@@ -203,7 +235,7 @@
     "outputFile": "StructureDefinition-unfall.json",
     "fshName": "Unfall",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 25,
     "endLine": 29
   },
@@ -211,7 +243,7 @@
     "outputFile": "StructureDefinition-wundversorgung-details.json",
     "fshName": "WundversorgungDetails",
     "fshType": "Extension",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 106,
     "endLine": 113
   },
@@ -227,7 +259,7 @@
     "outputFile": "ValueSet-hkp-massnahmen.json",
     "fshName": "HKPMassnahmen",
     "fshType": "ValueSet",
-    "fshFile": "haeusliche-krankenpflege-verordnung.fsh",
+    "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 68,
     "endLine": 78
   },
