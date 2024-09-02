@@ -1,0 +1,91 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "BeispielMedikamentengabeServiceRequest",
+  "meta": {
+    "profile": [
+      "http://fhir.odilab.de/StructureDefinition/odil-medikamentengabe-service-request"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Organization/example"
+    }
+  ],
+  "occurrenceTiming": {
+    "repeat": {
+      "boundsPeriod": {
+        "start": "2023-06-01",
+        "end": "2023-08-31"
+      },
+      "frequency": 3,
+      "period": 1,
+      "periodUnit": "d"
+    }
+  },
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "medikament",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "372567009",
+                "system": "http://snomed.info/sct",
+                "display": "Insulin"
+              }
+            ]
+          }
+        },
+        {
+          "valueDosage": {
+            "timing": {
+              "repeat": {
+                "frequency": 3,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            }
+          },
+          "url": "dosierung"
+        },
+        {
+          "url": "verabreichungsweg",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "34206005",
+                "system": "http://snomed.info/sct",
+                "display": "Subcutaneous route"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://fhir.odilab.de/StructureDefinition/medikation-details"
+    },
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/medikamentenbox-herrichtung",
+      "valueBoolean": true
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "385763009",
+          "system": "http://snomed.info/sct",
+          "display": "Behandlungspflege"
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "requester": {
+    "reference": "Practitioner/example"
+  }
+}

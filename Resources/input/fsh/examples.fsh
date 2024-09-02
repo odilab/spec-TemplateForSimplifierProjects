@@ -219,53 +219,60 @@ Description: "Ein Beispiel für ein Krankenversicherungsverhältnis."
 * payor.display = "KN Knappschaft"
 
 
-// Beispiel-Instanz
-Instance: ODIL_CarePlan
-InstanceOf: ODIL_CarePlan
+Instance: CareTeam_Example
+InstanceOf: CareTeam
 Usage: #example
-Title: "Beispiel HKPR Verordnung"
-Description: "Beispiel für eine Verordnung häuslicher Krankenpflege"
-* id = "BeispielHKPVerordnung"
+Title: "CareTeam_Example"
+Description: "Ein Beispiel für ein Pflegeteam."
+* id = "beispielPflegeteam"
 * status = #active
-* intent = #order
-* subject = Reference(Patient_Example)
-* period.start = "2024-07-01"
-* period.end = "2024-07-15"
-* created = "2024-06-30"
-* author = Reference(Practitioner_Example)
-* careTeam = Reference(CareTeam/example)
-* addresses = Reference(Condition/example)
-* addresses.extension.url = "http://hl7.org/fhir/StructureDefinition/condition-assertedDate"
-* addresses.extension.valueDateTime = "2024-06-30"
-* extension[einschraenkungen].valueString = "Eingeschränkte Mobilität"
-* extension[erstverordnung].valueBoolean = true
-* activity[+].detail.kind = #ServiceRequest
-* activity[=].detail.status = #scheduled
-* activity[=].detail.code = $sct#18629005 "Medikamentengabe"
-* activity[=].detail.description = "3x täglich 10 Einheiten Insulin"
-* activity[=].detail.extension[MedikamentengabeDetails].extension[productCodeableConcept].valueCodeableConcept = $sct#372567009 "Insulin"
-* activity[=].detail.extension[MedikamentengabeDetails].extension[dailyAmount].valueQuantity = 3 '{count}'
-* activity[=].detail.extension[MedikamentengabeDetails].extension[quantity].valueQuantity = 10 'U' "Units"
-* activity[+].detail.kind = #ServiceRequest
-* activity[=].detail.status = #scheduled
-* activity[=].detail.code = $sct#33747003 "Blutzuckermessung"
-* activity[=].detail.description = "3x täglich Blutzucker messen"
-* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.frequency = 3
-* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.period = 1
-* activity[=].detail.extension[BlutzuckermessungDetails].extension[scheduledTiming].valueTiming.repeat.periodUnit = #d
+* name = "Pflegeteam Musterstadt"
+* participant[0].role = http://terminology.hl7.org/CodeSystem/participant-role#nurse
+* participant[=].member = Reference(Practitioner_Example)
 
-Instance: ODIL_Bundle_CarePlan
+
+Instance: Odil-Composition-UmfassendesBeispiel
+InstanceOf: ODIL_Composition
+Usage: #example
+Title: "Odil-Composition-UmfassendesBeispiel"
+Description: "Ein Dokument, das eine umfassende Verordnung für häusliche Krankenpflege enthält."
+* id = "Odil-Composition-UmfassendesBeispiel"
+* extension[Rechtsgrundlage].valueCoding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"
+* extension[Rechtsgrundlage].valueCoding.code = #00
+* status = #final
+* type.coding.code = #e12H
+* subject = Reference(Patient_Example)
+* date = "2023-04-25"
+* author[Arzt] = Reference(Practitioner_Example)
+* author[Pruefnummer].identifier.value = "Y/400/2107/36/999"
+* custodian = Reference(Organization_Example)
+* section[Verordnung_HaeuslicheKrankenpflege].entry = Reference(UmfassendesBeispielODILCarePlan)
+* section[Krankenversicherungsverhaeltnis].entry = Reference(Coverage_Example)
+
+Instance: ODIL_Bundle_UmfassendesBeispiel
 InstanceOf: ODIL_Bundle
 Usage: #example
-Title: "ODIL-Bundle-CarePlan"
-Description: "Ein Bundle, das eine Verordnung für ein Hörgerät enthält."
-* id = "ODIL-Bundle-CarePlan"
-* identifier.value = "162.240.219.130.055.90"
-* timestamp = "2021-01-01T00:00:00Z"
-* entry[Dokumenteninformation].fullUrl = "Composition/Odil-Composition-CarePlan"
-* entry[Dokumenteninformation].resource = Odil-Composition-CarePlan
-* entry[HaeuslicheKrankenpflegeVerordnung].fullUrl = "CarePlan/BeispielHKPVerordnung"
-* entry[HaeuslicheKrankenpflegeVerordnung].resource = ODIL_CarePlan
+Title: "ODIL-Bundle-UmfassendesBeispiel"
+Description: "Ein Bundle, das eine umfassende Verordnung für häusliche Krankenpflege enthält."
+* id = "ODIL-Bundle-UmfassendesBeispiel"
+* identifier.value = "162.240.219.130.055.91"
+* timestamp = "2023-04-25T10:00:00Z"
+* entry[Dokumenteninformation].fullUrl = "Composition/Odil-Composition-UmfassendesBeispiel"
+* entry[Dokumenteninformation].resource = Odil-Composition-UmfassendesBeispiel
+* entry[HaeuslicheKrankenpflegeVerordnung].fullUrl = "CarePlan/BeispielCarePlan"
+* entry[HaeuslicheKrankenpflegeVerordnung].resource = BeispielCarePlan
+* entry[HaeuslicheKrankenpflege].fullUrl = "ServiceRequest/BeispielMedikamentengabeServiceRequest"
+* entry[HaeuslicheKrankenpflege].resource = BeispielMedikamentengabeServiceRequest
+* entry[HaeuslicheKrankenpflege].fullUrl = "ServiceRequest/BeispielBlutzuckermessungServiceRequest"
+* entry[HaeuslicheKrankenpflege].resource = BeispielBlutzuckermessungServiceRequest
+* entry[HaeuslicheKrankenpflege].fullUrl = "ServiceRequest/BeispielKompressionsbehandlungServiceRequest"
+* entry[HaeuslicheKrankenpflege].resource = BeispielKompressionsbehandlungServiceRequest
+* entry[HaeuslicheKrankenpflege].fullUrl = "ServiceRequest/BeispielWundversorgungServiceRequest"
+* entry[HaeuslicheKrankenpflege].resource = BeispielWundversorgungServiceRequest
+* entry[HaeuslicheKrankenpflege].fullUrl = "ServiceRequest/BeispielSonstigeMassnahmenServiceRequest"
+* entry[HaeuslicheKrankenpflege].resource = BeispielSonstigeMassnahmenServiceRequest
+* entry[HaeuslicheKrankenpflege].fullUrl = "ServiceRequest/BeispielGrundpflegeHauswirtschaftServiceRequest"
+* entry[HaeuslicheKrankenpflege].resource = BeispielGrundpflegeHauswirtschaftServiceRequest
 * entry[Patient].fullUrl = "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
 * entry[Patient].resource = Patient_Example
 * entry[AusstellendeVerschreibendeVerantwortlichePerson].fullUrl = "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
@@ -274,22 +281,158 @@ Description: "Ein Bundle, das eine Verordnung für ein Hörgerät enthält."
 * entry[Einrichtung].resource = Organization_Example
 * entry[Krankenversicherungsverhaeltnis].fullUrl = "Coverage/416b7bc3-7483-46ba-bc67-306bf671c569"
 * entry[Krankenversicherungsverhaeltnis].resource = Coverage_Example
+* entry[Pflegedienst].fullUrl = "CareTeam/beispielPflegeteam"
+* entry[Pflegedienst].resource = CareTeam_Example
 
 
-Instance: Odil-Composition-CarePlan
-InstanceOf: ODIL_Composition
+//Neuer CarePlan
+Instance: BeispielMedikamentengabeServiceRequest
+InstanceOf: ODIL_MedikamentengabeServiceRequest
 Usage: #example
-Title: "Odil-Composition-CarePlan"
-Description: "Ein Dokument, das eine Verordnung für häusliche Krankenpflege enthält."
-* id = "Odil-Composition-CarePlan"
-* extension[Rechtsgrundlage].valueCoding.system = "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"
-* extension[Rechtsgrundlage].valueCoding.code = #00
-* status = #final
-* type.coding.code = #e15H
-* subject.reference = "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
-* date = "2021-01-01"
-* author[Arzt] = Reference(Practitioner_Example)
-* author[Pruefnummer].identifier.value = "Y/400/2107/36/999"
-* custodian = Reference(Organization_Example)
-* section[Verordnung_HaeuslicheKrankenpflege].entry = Reference(ODIL_CarePlan)
-* section[Krankenversicherungsverhaeltnis].entry = Reference(Coverage_Example)
+* status = #active
+* intent = #order
+* subject = Reference(Patient/example)
+* requester = Reference(Practitioner/example)
+* performer = Reference(Organization/example)
+* occurrenceTiming.repeat.boundsPeriod.start = "2023-06-01"
+* occurrenceTiming.repeat.boundsPeriod.end = "2023-08-31"
+* occurrenceTiming.repeat.frequency = 3
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* extension[medikationDetails].extension[medikament].valueCodeableConcept = $sct#372567009 "Insulin"
+* extension[medikationDetails].extension[dosierung].valueDosage.timing.repeat.frequency = 3
+* extension[medikationDetails].extension[dosierung].valueDosage.timing.repeat.period = 1
+* extension[medikationDetails].extension[dosierung].valueDosage.timing.repeat.periodUnit = #d
+* extension[medikationDetails].extension[verabreichungsweg].valueCodeableConcept = $sct#34206005 "Subcutaneous route"
+* extension[medikamentenboxHerrichtung].valueBoolean = true
+
+Instance: BeispielBlutzuckermessungServiceRequest
+InstanceOf: ODIL_BlutzuckermessungServiceRequest
+Usage: #example
+* status = #active
+* intent = #order
+* subject = Reference(Patient/example)
+* requester = Reference(Practitioner/example)
+* performer = Reference(Organization/example)
+* occurrenceTiming.repeat.boundsPeriod.start = "2023-06-01"
+* occurrenceTiming.repeat.boundsPeriod.end = "2023-07-01"
+* occurrenceTiming.repeat.frequency = 3
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* extension[erstOderNeueinstellung].valueBoolean = true
+* extension[intensiviertInsulin].valueBoolean = true
+
+Instance: BeispielKompressionsbehandlungServiceRequest
+InstanceOf: ODIL_KompressionsbehandlungServiceRequest
+Usage: #example
+* status = #active
+* intent = #order
+* subject = Reference(Patient/example)
+* requester = Reference(Practitioner/example)
+* performer = Reference(Organization/example)
+* occurrenceTiming.repeat.boundsPeriod.start = "2023-06-01"
+* occurrenceTiming.repeat.boundsPeriod.end = "2023-08-31"
+* occurrenceTiming.repeat.frequency = 2
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* bodySite = $sct#69695003 "Struktur des rechten Beins"
+* extension[kompressionsartDetails].extension[kompressionsstruempfe].valueCodeableConcept = $sct#229070002 "Anziehen von Kompressionsstrümpfen"
+* extension[kompressionsartDetails].extension[kompressionsverbaende].valueCodeableConcept = $sct#225369006 "Anlegen von Kompressionsverband"
+
+Instance: BeispielWundversorgungServiceRequest
+InstanceOf: ODIL_WundversorgungServiceRequest
+Usage: #example
+* status = #active
+* intent = #order
+* subject = Reference(Patient/example)
+* requester = Reference(Practitioner/example)
+* performer = Reference(Organization/example)
+* occurrenceTiming.repeat.boundsPeriod.start = "2023-06-01"
+* occurrenceTiming.repeat.boundsPeriod.end = "2023-08-31"
+* occurrenceTiming.repeat.frequency = 1
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* bodySite = $sct#72001000 "Struktur der Fußsohle"
+* extension[wundartDetails].extension[wundart].valueString = "Diabetisches Fußulkus"
+* extension[wundartDetails].extension[aktuelleGroesse].valueString = "3cm x 2cm"
+* extension[wundartDetails].extension[aktuellerGrad].valueString = "Grad 2"
+* extension[wundartDetails].extension[praeparate].valueString = "Hydrokolloidverband"
+* extension[wundartDetails].extension[versorgungsart].valueCodeableConcept = $sct#225360001 "Chronische Wundversorgung"
+
+Instance: BeispielSonstigeMassnahmenServiceRequest
+InstanceOf: ODIL_SonstigeMassnahmenServiceRequest
+Usage: #example
+* status = #active
+* intent = #order
+* subject = Reference(Patient/example)
+* requester = Reference(Practitioner/example)
+* performer = Reference(Organization/example)
+* occurrenceTiming.repeat.boundsPeriod.start = "2023-06-01"
+* occurrenceTiming.repeat.boundsPeriod.end = "2023-08-31"
+* occurrenceTiming.repeat.frequency = 1
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* code = $sct#225358003 "Kompressionsbehandlung"
+* extension[anleitungDetails].extension[anleitungsArt].valueString = "Anleitung zur Kompressionsbehandlung"
+* extension[anleitungDetails].extension[anzahl].valuePositiveInt = 3
+
+Instance: BeispielGrundpflegeHauswirtschaftServiceRequest
+InstanceOf: ODIL_GrundpflegeHauswirtschaftServiceRequest
+Usage: #example
+* status = #active
+* intent = #order
+* subject = Reference(Patient/example)
+* requester = Reference(Practitioner/example)
+* performer = Reference(Organization/example)
+* occurrenceTiming.repeat.boundsPeriod.start = "2023-06-01"
+* occurrenceTiming.repeat.boundsPeriod.end = "2023-08-31"
+* occurrenceTiming.repeat.frequency = 1
+* occurrenceTiming.repeat.period = 1
+* occurrenceTiming.repeat.periodUnit = #d
+* code = $sct#78680009 "Grundpflege"
+* extension[unterstuetzungspflege].valueBoolean = true
+* extension[krankenhausvermeidungspflege].valueBoolean = false
+* extension[grundpflegeDetails].valueBoolean = true
+* extension[hauswirtschaftlicheVersorgungDetails].valueBoolean = true
+
+Instance: BeispielCarePlan
+InstanceOf: ODIL_CarePlan
+Usage: #example
+* status = #active
+* intent = #order
+* subject = Reference(Patient/example)
+* period.start = "2023-06-01"
+* period.end = "2023-08-31"
+* created = "2023-05-15"
+* author = Reference(Practitioner/example)
+* careTeam = Reference(CareTeam/example)
+* addresses = Reference(Condition/example)
+* activity[0].detail.kind = #ServiceRequest
+* activity[0].detail.status = #scheduled
+* activity[0].detail.code = $sct#18629005 "Medikamentengabe"
+* activity[0].reference = Reference(BeispielMedikamentengabeServiceRequest)
+* activity[1].detail.kind = #ServiceRequest
+* activity[1].detail.status = #scheduled
+* activity[1].detail.code = $sct#33747003 "Blutzuckermessung"
+* activity[1].reference = Reference(BeispielBlutzuckermessungServiceRequest)
+* activity[2].detail.kind = #ServiceRequest
+* activity[2].detail.status = #scheduled
+* activity[2].detail.code = $sct#225358003 "Kompressionsbehandlung"
+* activity[2].reference = Reference(BeispielKompressionsbehandlungServiceRequest)
+* activity[3].detail.kind = #ServiceRequest
+* activity[3].detail.status = #scheduled
+* activity[3].detail.code = $sct#385949008 "Wundversorgung"
+* activity[3].reference = Reference(BeispielWundversorgungServiceRequest)
+* activity[4].detail.kind = #ServiceRequest
+* activity[4].detail.status = #scheduled
+* activity[4].detail.code = $sct#385763009 "Sonstige Maßnahmen der Behandlungspflege"
+* activity[4].reference = Reference(BeispielSonstigeMassnahmenServiceRequest)
+* activity[5].detail.kind = #ServiceRequest
+* activity[5].detail.status = #scheduled
+* activity[5].detail.code = $sct#78680009 "Grundpflege"
+* activity[5].reference = Reference(BeispielGrundpflegeHauswirtschaftServiceRequest)
+* extension[einschraenkungen].valueString = "Patient hat eingeschränkte Mobilität und benötigt Unterstützung bei der täglichen Medikamenteneinnahme, Wundversorgung und Grundpflege"
+* extension[erstverordnung].valueBoolean = true
+* extension[folgeverordnung].valueBoolean = false
+* extension[unfall].valueBoolean = false
+* extension[ser].valueBoolean = false

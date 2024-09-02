@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "WundversorgungsartVS",
+  "id": "wundversorgungsart-vs",
+  "title": "Wundversorgungsart",
+  "url": "http://fhir.odilab.de/ValueSet/wundversorgungsart-vs",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "225358003",
+            "display": "Akute Wundversorgung"
+          },
+          {
+            "code": "225360001",
+            "display": "Chronische Wundversorgung"
+          }
+        ]
+      }
+    ]
+  }
+}

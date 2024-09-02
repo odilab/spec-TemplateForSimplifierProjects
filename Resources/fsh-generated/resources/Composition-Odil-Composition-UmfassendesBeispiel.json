@@ -1,6 +1,6 @@
 {
   "resourceType": "Composition",
-  "id": "Odil-Composition-CarePlan",
+  "id": "Odil-Composition-UmfassendesBeispiel",
   "meta": {
     "profile": [
       "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"
@@ -19,12 +19,9 @@
     "coding": [
       {
         "system": "https://fhir.odilab.de/ValueSet/VS_HIMI_HEIMI_KBV_FORMULAR_ART",
-        "code": "e15H"
+        "code": "e12H"
       }
     ]
-  },
-  "subject": {
-    "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
   },
   "author": [
     {
@@ -43,7 +40,7 @@
     {
       "entry": [
         {
-          "reference": "CarePlan/BeispielHKPVerordnung"
+          "reference": "UmfassendesBeispielODILCarePlan"
         }
       ],
       "code": {
@@ -73,7 +70,10 @@
   ],
   "status": "final",
   "title": "elektronische Arznei- Heil- Hilfsmittelverordnung",
-  "date": "2021-01-01",
+  "subject": {
+    "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+  },
+  "date": "2023-04-25",
   "custodian": {
     "reference": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
   }

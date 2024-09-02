@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "KompressionsverbaendeActions",
+  "id": "kompressionsverbaende-actions",
+  "title": "Aktionen für Kompressionsverbände",
+  "url": "http://fhir.odilab.de/ValueSet/kompressionsverbaende-actions",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "225369006",
+            "display": "Anlegen von Kompressionsverband"
+          },
+          {
+            "code": "225370007",
+            "display": "Abnehmen von Kompressionsverband"
+          }
+        ]
+      }
+    ]
+  }
+}

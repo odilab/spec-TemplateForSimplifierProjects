@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "GrundpflegeHauswirtschaftVS",
+  "id": "grundpflege-hauswirtschaft-vs",
+  "title": "Grundpflege und hauswirtschaftliche Versorgung",
+  "url": "http://fhir.odilab.de/ValueSet/grundpflege-hauswirtschaft-vs",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "78680009",
+            "display": "Grundpflege"
+          },
+          {
+            "code": "22510005",
+            "display": "Hauswirtschaftliche Versorgung"
+          }
+        ]
+      }
+    ]
+  }
+}

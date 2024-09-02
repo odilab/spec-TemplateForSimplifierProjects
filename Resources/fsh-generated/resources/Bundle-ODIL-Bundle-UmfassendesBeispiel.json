@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "ODIL-Bundle-CarePlan",
+  "id": "ODIL-Bundle-UmfassendesBeispiel",
   "meta": {
     "profile": [
       "http://fhir.odilab.de/StructureDefinition/ODIL-Bundle"
@@ -8,14 +8,14 @@
   },
   "identifier": {
     "system": "https://gematik.de/fhir/NamingSystem/PrescriptionID",
-    "value": "162.240.219.130.055.90"
+    "value": "162.240.219.130.055.91"
   },
   "entry": [
     {
-      "fullUrl": "Composition/Odil-Composition-CarePlan",
+      "fullUrl": "Composition/Odil-Composition-UmfassendesBeispiel",
       "resource": {
         "resourceType": "Composition",
-        "id": "Odil-Composition-CarePlan",
+        "id": "Odil-Composition-UmfassendesBeispiel",
         "meta": {
           "profile": [
             "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"
@@ -34,12 +34,9 @@
           "coding": [
             {
               "system": "https://fhir.odilab.de/ValueSet/VS_HIMI_HEIMI_KBV_FORMULAR_ART",
-              "code": "e15H"
+              "code": "e12H"
             }
           ]
-        },
-        "subject": {
-          "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
         },
         "author": [
           {
@@ -58,7 +55,7 @@
           {
             "entry": [
               {
-                "reference": "CarePlan/BeispielHKPVerordnung"
+                "reference": "UmfassendesBeispielODILCarePlan"
               }
             ],
             "code": {
@@ -88,25 +85,28 @@
         ],
         "status": "final",
         "title": "elektronische Arznei- Heil- Hilfsmittelverordnung",
-        "date": "2021-01-01",
+        "subject": {
+          "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+        },
+        "date": "2023-04-25",
         "custodian": {
           "reference": "Organization/416b7bc3-7483-46ba-bc67-306bf671c569"
         }
       }
     },
     {
-      "fullUrl": "CarePlan/BeispielHKPVerordnung",
+      "fullUrl": "CarePlan/BeispielCarePlan",
       "resource": {
         "resourceType": "CarePlan",
-        "id": "BeispielHKPVerordnung",
+        "id": "BeispielCarePlan",
         "meta": {
           "profile": [
             "http://fhir.odilab.de/StructureDefinition/odil-careplan"
           ]
         },
         "period": {
-          "start": "2024-07-01",
-          "end": "2024-07-15"
+          "start": "2023-06-01",
+          "end": "2023-08-31"
         },
         "careTeam": [
           {
@@ -115,64 +115,12 @@
         ],
         "addresses": [
           {
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
-                "valueDateTime": "2024-06-30"
-              }
-            ],
             "reference": "Condition/example"
-          }
-        ],
-        "extension": [
-          {
-            "url": "http://fhir.odilab.de/StructureDefinition/einschraenkungen",
-            "valueString": "Eingeschränkte Mobilität"
-          },
-          {
-            "url": "http://fhir.odilab.de/StructureDefinition/erstverordnung",
-            "valueBoolean": true
           }
         ],
         "activity": [
           {
             "detail": {
-              "extension": [
-                {
-                  "extension": [
-                    {
-                      "url": "productCodeableConcept",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "code": "372567009",
-                            "system": "http://snomed.info/sct",
-                            "display": "Insulin"
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "url": "dailyAmount",
-                      "valueQuantity": {
-                        "value": 3,
-                        "code": "{count}",
-                        "system": "http://unitsofmeasure.org"
-                      }
-                    },
-                    {
-                      "url": "quantity",
-                      "valueQuantity": {
-                        "value": 10,
-                        "code": "U",
-                        "system": "http://unitsofmeasure.org",
-                        "unit": "Units"
-                      }
-                    }
-                  ],
-                  "url": "http://fhir.odilab.de/StructureDefinition/medikamentengabe-details"
-                }
-              ],
               "kind": "ServiceRequest",
               "status": "scheduled",
               "code": {
@@ -183,29 +131,14 @@
                     "display": "Medikamentengabe"
                   }
                 ]
-              },
-              "description": "3x täglich 10 Einheiten Insulin"
+              }
+            },
+            "reference": {
+              "reference": "ServiceRequest/BeispielMedikamentengabeServiceRequest"
             }
           },
           {
             "detail": {
-              "extension": [
-                {
-                  "extension": [
-                    {
-                      "valueTiming": {
-                        "repeat": {
-                          "frequency": 3,
-                          "period": 1,
-                          "periodUnit": "d"
-                        }
-                      },
-                      "url": "scheduledTiming"
-                    }
-                  ],
-                  "url": "http://fhir.odilab.de/StructureDefinition/blutzuckermessung-details"
-                }
-              ],
               "kind": "ServiceRequest",
               "status": "scheduled",
               "code": {
@@ -216,19 +149,189 @@
                     "display": "Blutzuckermessung"
                   }
                 ]
-              },
-              "description": "3x täglich Blutzucker messen"
+              }
+            },
+            "reference": {
+              "reference": "ServiceRequest/BeispielBlutzuckermessungServiceRequest"
             }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "status": "scheduled",
+              "code": {
+                "coding": [
+                  {
+                    "code": "225358003",
+                    "system": "http://snomed.info/sct",
+                    "display": "Kompressionsbehandlung"
+                  }
+                ]
+              }
+            },
+            "reference": {
+              "reference": "ServiceRequest/BeispielKompressionsbehandlungServiceRequest"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "status": "scheduled",
+              "code": {
+                "coding": [
+                  {
+                    "code": "385949008",
+                    "system": "http://snomed.info/sct",
+                    "display": "Wundversorgung"
+                  }
+                ]
+              }
+            },
+            "reference": {
+              "reference": "ServiceRequest/BeispielWundversorgungServiceRequest"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "status": "scheduled",
+              "code": {
+                "coding": [
+                  {
+                    "code": "385763009",
+                    "system": "http://snomed.info/sct",
+                    "display": "Sonstige Maßnahmen der Behandlungspflege"
+                  }
+                ]
+              }
+            },
+            "reference": {
+              "reference": "ServiceRequest/BeispielSonstigeMassnahmenServiceRequest"
+            }
+          },
+          {
+            "detail": {
+              "kind": "ServiceRequest",
+              "status": "scheduled",
+              "code": {
+                "coding": [
+                  {
+                    "code": "78680009",
+                    "system": "http://snomed.info/sct",
+                    "display": "Grundpflege"
+                  }
+                ]
+              }
+            },
+            "reference": {
+              "reference": "ServiceRequest/BeispielGrundpflegeHauswirtschaftServiceRequest"
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/einschraenkungen",
+            "valueString": "Patient hat eingeschränkte Mobilität und benötigt Unterstützung bei der täglichen Medikamenteneinnahme, Wundversorgung und Grundpflege"
+          },
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/erstverordnung",
+            "valueBoolean": true
+          },
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/folgeverordnung",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/unfall",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/ser",
+            "valueBoolean": false
           }
         ],
         "status": "active",
         "intent": "order",
         "subject": {
-          "reference": "Patient/416b7bc3-7483-46ba-bc67-306bf671c569"
+          "reference": "Patient/example"
         },
-        "created": "2024-06-30",
+        "created": "2023-05-15",
         "author": {
-          "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+          "reference": "Practitioner/example"
+        }
+      }
+    },
+    {
+      "fullUrl": "ServiceRequest/BeispielGrundpflegeHauswirtschaftServiceRequest",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "BeispielGrundpflegeHauswirtschaftServiceRequest",
+        "meta": {
+          "profile": [
+            "http://fhir.odilab.de/StructureDefinition/odil-grundpflege-hauswirtschaft-service-request"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/example"
+          }
+        ],
+        "occurrenceTiming": {
+          "repeat": {
+            "boundsPeriod": {
+              "start": "2023-06-01",
+              "end": "2023-08-31"
+            },
+            "frequency": 1,
+            "period": 1,
+            "periodUnit": "d"
+          }
+        },
+        "extension": [
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/unterstuetzungspflege",
+            "valueBoolean": true
+          },
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/krankenhausvermeidungspflege",
+            "valueBoolean": false
+          },
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/grundpflege-details",
+            "valueBoolean": true
+          },
+          {
+            "url": "http://fhir.odilab.de/StructureDefinition/hauswirtschaftliche-versorgung-details",
+            "valueBoolean": true
+          }
+        ],
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "385763009",
+                "system": "http://snomed.info/sct",
+                "display": "Behandlungspflege"
+              }
+            ]
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/example"
+        },
+        "requester": {
+          "reference": "Practitioner/example"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "78680009",
+              "system": "http://snomed.info/sct",
+              "display": "Grundpflege"
+            }
+          ]
         }
       }
     },
@@ -486,8 +589,34 @@
         ],
         "status": "active"
       }
+    },
+    {
+      "fullUrl": "CareTeam/beispielPflegeteam",
+      "resource": {
+        "resourceType": "CareTeam",
+        "id": "beispielPflegeteam",
+        "participant": [
+          {
+            "role": [
+              {
+                "coding": [
+                  {
+                    "code": "nurse",
+                    "system": "http://terminology.hl7.org/CodeSystem/participant-role"
+                  }
+                ]
+              }
+            ],
+            "member": {
+              "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+            }
+          }
+        ],
+        "status": "active",
+        "name": "Pflegeteam Musterstadt"
+      }
     }
   ],
   "type": "document",
-  "timestamp": "2021-01-01T00:00:00Z"
+  "timestamp": "2023-04-25T10:00:00Z"
 }

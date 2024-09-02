@@ -71,11 +71,82 @@
     "resource": [
       {
         "reference": {
-          "reference": "CarePlan/BeispielHKPVerordnung"
+          "reference": "ValueSet/kompressionsstruempfe-actions"
         },
-        "name": "Beispiel HKPR Verordnung",
-        "description": "Beispiel für eine Verordnung häuslicher Krankenpflege",
+        "name": "Aktionen für Kompressionsstrümpfe",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/kompressionsverbaende-actions"
+        },
+        "name": "Aktionen für Kompressionsverbände",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/intensiviert-insulin"
+        },
+        "name": "Bei intensivierter Insulintherapie",
+        "description": "Kennzeichnung für intensivierte Insulintherapie",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/BeispielBlutzuckermessungServiceRequest"
+        },
+        "name": "BeispielBlutzuckermessungServiceRequest",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/odil-blutzuckermessung-service-request"
+      },
+      {
+        "reference": {
+          "reference": "CarePlan/BeispielCarePlan"
+        },
+        "name": "BeispielCarePlan",
         "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/odil-careplan"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/BeispielGrundpflegeHauswirtschaftServiceRequest"
+        },
+        "name": "BeispielGrundpflegeHauswirtschaftServiceRequest",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/odil-grundpflege-hauswirtschaft-service-request"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/BeispielKompressionsbehandlungServiceRequest"
+        },
+        "name": "BeispielKompressionsbehandlungServiceRequest",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/odil-kompressionsbehandlung-service-request"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/BeispielMedikamentengabeServiceRequest"
+        },
+        "name": "BeispielMedikamentengabeServiceRequest",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/odil-medikamentengabe-service-request"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/BeispielSonstigeMassnahmenServiceRequest"
+        },
+        "name": "BeispielSonstigeMassnahmenServiceRequest",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/odil-sonstige-massnahmen-service-request"
+      },
+      {
+        "reference": {
+          "reference": "ServiceRequest/BeispielWundversorgungServiceRequest"
+        },
+        "name": "BeispielWundversorgungServiceRequest",
+        "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/odil-wundversorgung-service-request"
+      },
+      {
+        "reference": {
+          "reference": "CareTeam/beispielPflegeteam"
+        },
+        "name": "CareTeam_Example",
+        "description": "Ein Beispiel für ein Pflegeteam.",
+        "exampleBoolean": true
       },
       {
         "reference": {
@@ -103,6 +174,14 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/dauer-abweichung"
+        },
+        "name": "Dauer bei Abweichung",
+        "description": "Abweichende Dauer für eine spezifische Maßnahme",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/sonstige-massnahmen-details"
         },
         "name": "Details zu sonstigen Maßnahmen",
@@ -110,9 +189,41 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/anleitung-details"
+        },
+        "name": "Details zur Anleitung",
+        "description": "Details zur Anleitung für Patient/Angehörige",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/blutzuckermessung-details"
         },
         "name": "Details zur Blutzuckermessung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/grundpflege-details"
+        },
+        "name": "Details zur Grundpflege",
+        "description": "Spezifische Details zur Grundpflege",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/hauswirtschaftliche-versorgung-details"
+        },
+        "name": "Details zur hauswirtschaftlichen Versorgung",
+        "description": "Spezifische Details zur hauswirtschaftlichen Versorgung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/kompressionsart-details"
+        },
+        "name": "Details zur Kompressionsart",
+        "description": "Spezifische Details zur Art der Kompressionsbehandlung",
         "exampleBoolean": false
       },
       {
@@ -131,6 +242,22 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/medikation-details"
+        },
+        "name": "Details zur Medikation",
+        "description": "Detaillierte Informationen zur Medikation und Dosierung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/wundart-details"
+        },
+        "name": "Details zur Wundart",
+        "description": "Spezifische Details zur Art der Wunde und Versorgung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/wundversorgung-details"
         },
         "name": "Details zur Wundversorgung",
@@ -142,6 +269,14 @@
         },
         "name": "Einschränkungen",
         "description": "Einschränkungen, die häusliche Krankenpflege erforderlich machen",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/erst-oder-neueinstellung"
+        },
+        "name": "Erst- oder Neueinstellung",
+        "description": "Kennzeichnung für Erst- oder Neueinstellung (max. 4 Wochen und max. 3x täglich)",
         "exampleBoolean": false
       },
       {
@@ -166,6 +301,21 @@
         },
         "name": "Folgeversorgung",
         "description": "Kennzeichnung, ob der Versicherte bereits ein gleichartiges Hilfsmittel besitzt",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/grundpflege-hauswirtschaft-vs"
+        },
+        "name": "Grundpflege und hauswirtschaftliche Versorgung",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/medikamentenbox-herrichtung"
+        },
+        "name": "Herrichtung der Medikamentenbox",
+        "description": "Angabe, ob die Medikamentenbox hergerichtet werden soll",
         "exampleBoolean": false
       },
       {
@@ -210,6 +360,30 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/krankenhausvermeidungspflege"
+        },
+        "name": "Krankenhausvermeidungspflege",
+        "description": "Kennzeichnung für Krankenhausvermeidungspflege nach § 37 (1) SGB V",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/odil-base-service-request"
+        },
+        "name": "ODIL Base ServiceRequest",
+        "description": "Basis-Profil für alle ServiceRequests in der häuslichen Krankenpflege",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/odil-blutzuckermessung-service-request"
+        },
+        "name": "ODIL Blutzuckermessung ServiceRequest",
+        "description": "ServiceRequest für Blutzuckermessung in der häuslichen Krankenpflege",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "StructureDefinition/odil-careplan"
         },
         "name": "ODIL CarePlan",
@@ -226,6 +400,46 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/odil-grundpflege-hauswirtschaft-service-request"
+        },
+        "name": "ODIL Grundpflege und hauswirtschaftliche Versorgung ServiceRequest",
+        "description": "ServiceRequest für Grundpflege und hauswirtschaftliche Versorgung in der häuslichen Krankenpflege",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/odil-kompressionsbehandlung-service-request"
+        },
+        "name": "ODIL Kompressionsbehandlung ServiceRequest",
+        "description": "ServiceRequest für Kompressionsbehandlung in der häuslichen Krankenpflege",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/odil-medikamentengabe-service-request"
+        },
+        "name": "ODIL Medikamentengabe ServiceRequest",
+        "description": "ServiceRequest für Medikamentengabe in der häuslichen Krankenpflege",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/odil-sonstige-massnahmen-service-request"
+        },
+        "name": "ODIL Sonstige Maßnahmen ServiceRequest",
+        "description": "ServiceRequest für sonstige Maßnahmen in der häuslichen Krankenpflege",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "StructureDefinition/odil-wundversorgung-service-request"
+        },
+        "name": "ODIL Wundversorgung ServiceRequest",
+        "description": "ServiceRequest für Wundversorgung in der häuslichen Krankenpflege",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "Bundle/ODIL-Bundle"
         },
         "name": "ODIL-Bundle",
@@ -234,18 +448,18 @@
       },
       {
         "reference": {
-          "reference": "Bundle/ODIL-Bundle-CarePlan"
+          "reference": "Bundle/ODIL-Bundle-UmfassendesBeispiel"
         },
-        "name": "ODIL-Bundle-CarePlan",
-        "description": "Ein Bundle, das eine Verordnung für ein Hörgerät enthält.",
+        "name": "ODIL-Bundle-UmfassendesBeispiel",
+        "description": "Ein Bundle, das eine umfassende Verordnung für häusliche Krankenpflege enthält.",
         "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/ODIL-Bundle"
       },
       {
         "reference": {
-          "reference": "Composition/Odil-Composition-CarePlan"
+          "reference": "Composition/Odil-Composition-UmfassendesBeispiel"
         },
-        "name": "Odil-Composition-CarePlan",
-        "description": "Ein Dokument, das eine Verordnung für häusliche Krankenpflege enthält.",
+        "name": "Odil-Composition-UmfassendesBeispiel",
+        "description": "Ein Dokument, das eine umfassende Verordnung für häusliche Krankenpflege enthält.",
         "exampleCanonical": "http://fhir.odilab.de/StructureDefinition/Odil-CompositionHiMi"
       },
       {
@@ -329,10 +543,25 @@
       },
       {
         "reference": {
+          "reference": "StructureDefinition/unterstuetzungspflege"
+        },
+        "name": "Unterstützungspflege",
+        "description": "Kennzeichnung für Unterstützungspflege nach § 37 (1a) SGB V",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
           "reference": "ValueSet/VS-HIMI-HEIMI-KBV-FORMULAR-ART"
         },
         "name": "VS_HIMI_HEIMI_KBV_FORMULAR_ART",
         "description": "Ein ValueSet, das sowohl ausgewählte Codes aus dem KBV Code-System als auch zusätzliche eigene Codes umfasst",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "ValueSet/wundversorgungsart-vs"
+        },
+        "name": "Wundversorgungsart",
         "exampleBoolean": false
       }
     ],

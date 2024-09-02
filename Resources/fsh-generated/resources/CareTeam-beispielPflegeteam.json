@@ -1,0 +1,23 @@
+{
+  "resourceType": "CareTeam",
+  "id": "beispielPflegeteam",
+  "participant": [
+    {
+      "role": [
+        {
+          "coding": [
+            {
+              "code": "nurse",
+              "system": "http://terminology.hl7.org/CodeSystem/participant-role"
+            }
+          ]
+        }
+      ],
+      "member": {
+        "reference": "Practitioner/416b7bc3-7483-46ba-bc67-306bf671c569"
+      }
+    }
+  ],
+  "status": "active",
+  "name": "Pflegeteam Musterstadt"
+}

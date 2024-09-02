@@ -1,0 +1,25 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "KompressionsstruempfeActions",
+  "id": "kompressionsstruempfe-actions",
+  "title": "Aktionen für Kompressionsstrümpfe",
+  "url": "http://fhir.odilab.de/ValueSet/kompressionsstruempfe-actions",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "229070002",
+            "display": "Anziehen von Kompressionsstrümpfen"
+          },
+          {
+            "code": "229071003",
+            "display": "Ausziehen von Kompressionsstrümpfen"
+          }
+        ]
+      }
+    ]
+  }
+}

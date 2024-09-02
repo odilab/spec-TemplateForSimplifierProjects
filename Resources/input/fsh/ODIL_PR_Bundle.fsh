@@ -49,7 +49,9 @@ Description: "Dieses Profil repräsentiert die Verordnung von Hilfsmitteln basie
     Einrichtung 1..1 MS and
     AusstellendeVerschreibendeVerantwortlichePerson 1..2 MS and
     VerordnungHilfsmittel 0..1 MS and
-    HaeuslicheKrankenpflegeVerordnung 0..1 MS
+    HaeuslicheKrankenpflegeVerordnung 0..1 MS and
+    Pflegedienst 0..1 MS and
+    HaeuslicheKrankenpflege 0..6 MS
 * entry[Dokumenteninformation].resource only ODIL_Composition
 * entry[Patient].resource only KBV_PR_FOR_Patient
 * entry[Krankenversicherungsverhaeltnis].resource only KBV_PR_FOR_Coverage
@@ -57,6 +59,8 @@ Description: "Dieses Profil repräsentiert die Verordnung von Hilfsmitteln basie
 * entry[AusstellendeVerschreibendeVerantwortlichePerson].resource only KBV_PR_FOR_Practitioner
 * entry[VerordnungHilfsmittel].resource only PrescriptionDevice
 * entry[HaeuslicheKrankenpflegeVerordnung].resource only ODIL_CarePlan
+* entry[Pflegedienst].resource only CareTeam
+* entry[HaeuslicheKrankenpflege].resource only ODIL_BaseServiceRequest
 * signature ..1
 
 Invariant: Composition-pflicht

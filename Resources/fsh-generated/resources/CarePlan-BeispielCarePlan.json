@@ -1,0 +1,164 @@
+{
+  "resourceType": "CarePlan",
+  "id": "BeispielCarePlan",
+  "meta": {
+    "profile": [
+      "http://fhir.odilab.de/StructureDefinition/odil-careplan"
+    ]
+  },
+  "period": {
+    "start": "2023-06-01",
+    "end": "2023-08-31"
+  },
+  "careTeam": [
+    {
+      "reference": "CareTeam/example"
+    }
+  ],
+  "addresses": [
+    {
+      "reference": "Condition/example"
+    }
+  ],
+  "activity": [
+    {
+      "detail": {
+        "kind": "ServiceRequest",
+        "status": "scheduled",
+        "code": {
+          "coding": [
+            {
+              "code": "18629005",
+              "system": "http://snomed.info/sct",
+              "display": "Medikamentengabe"
+            }
+          ]
+        }
+      },
+      "reference": {
+        "reference": "ServiceRequest/BeispielMedikamentengabeServiceRequest"
+      }
+    },
+    {
+      "detail": {
+        "kind": "ServiceRequest",
+        "status": "scheduled",
+        "code": {
+          "coding": [
+            {
+              "code": "33747003",
+              "system": "http://snomed.info/sct",
+              "display": "Blutzuckermessung"
+            }
+          ]
+        }
+      },
+      "reference": {
+        "reference": "ServiceRequest/BeispielBlutzuckermessungServiceRequest"
+      }
+    },
+    {
+      "detail": {
+        "kind": "ServiceRequest",
+        "status": "scheduled",
+        "code": {
+          "coding": [
+            {
+              "code": "225358003",
+              "system": "http://snomed.info/sct",
+              "display": "Kompressionsbehandlung"
+            }
+          ]
+        }
+      },
+      "reference": {
+        "reference": "ServiceRequest/BeispielKompressionsbehandlungServiceRequest"
+      }
+    },
+    {
+      "detail": {
+        "kind": "ServiceRequest",
+        "status": "scheduled",
+        "code": {
+          "coding": [
+            {
+              "code": "385949008",
+              "system": "http://snomed.info/sct",
+              "display": "Wundversorgung"
+            }
+          ]
+        }
+      },
+      "reference": {
+        "reference": "ServiceRequest/BeispielWundversorgungServiceRequest"
+      }
+    },
+    {
+      "detail": {
+        "kind": "ServiceRequest",
+        "status": "scheduled",
+        "code": {
+          "coding": [
+            {
+              "code": "385763009",
+              "system": "http://snomed.info/sct",
+              "display": "Sonstige Maßnahmen der Behandlungspflege"
+            }
+          ]
+        }
+      },
+      "reference": {
+        "reference": "ServiceRequest/BeispielSonstigeMassnahmenServiceRequest"
+      }
+    },
+    {
+      "detail": {
+        "kind": "ServiceRequest",
+        "status": "scheduled",
+        "code": {
+          "coding": [
+            {
+              "code": "78680009",
+              "system": "http://snomed.info/sct",
+              "display": "Grundpflege"
+            }
+          ]
+        }
+      },
+      "reference": {
+        "reference": "ServiceRequest/BeispielGrundpflegeHauswirtschaftServiceRequest"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/einschraenkungen",
+      "valueString": "Patient hat eingeschränkte Mobilität und benötigt Unterstützung bei der täglichen Medikamenteneinnahme, Wundversorgung und Grundpflege"
+    },
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/erstverordnung",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/folgeverordnung",
+      "valueBoolean": false
+    },
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/unfall",
+      "valueBoolean": false
+    },
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/ser",
+      "valueBoolean": false
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "created": "2023-05-15",
+  "author": {
+    "reference": "Practitioner/example"
+  }
+}

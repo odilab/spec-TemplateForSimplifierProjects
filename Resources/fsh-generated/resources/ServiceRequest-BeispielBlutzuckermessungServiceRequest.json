@@ -1,0 +1,54 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "BeispielBlutzuckermessungServiceRequest",
+  "meta": {
+    "profile": [
+      "http://fhir.odilab.de/StructureDefinition/odil-blutzuckermessung-service-request"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Organization/example"
+    }
+  ],
+  "occurrenceTiming": {
+    "repeat": {
+      "boundsPeriod": {
+        "start": "2023-06-01",
+        "end": "2023-07-01"
+      },
+      "frequency": 3,
+      "period": 1,
+      "periodUnit": "d"
+    }
+  },
+  "extension": [
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/erst-oder-neueinstellung",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://fhir.odilab.de/StructureDefinition/intensiviert-insulin",
+      "valueBoolean": true
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "385763009",
+          "system": "http://snomed.info/sct",
+          "display": "Behandlungspflege"
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "requester": {
+    "reference": "Practitioner/example"
+  }
+}

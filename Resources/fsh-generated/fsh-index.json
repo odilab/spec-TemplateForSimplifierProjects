@@ -8,12 +8,12 @@
     "endLine": 21
   },
   {
-    "outputFile": "Bundle-ODIL-Bundle-CarePlan.json",
-    "fshName": "ODIL_Bundle_CarePlan",
+    "outputFile": "Bundle-ODIL-Bundle-UmfassendesBeispiel.json",
+    "fshName": "ODIL_Bundle_UmfassendesBeispiel",
     "fshType": "Instance",
     "fshFile": "examples.fsh",
-    "startLine": 257,
-    "endLine": 276
+    "startLine": 252,
+    "endLine": 285
   },
   {
     "outputFile": "Bundle-ODIL-Bundle.json",
@@ -24,12 +24,20 @@
     "endLine": 61
   },
   {
-    "outputFile": "CarePlan-BeispielHKPVerordnung.json",
-    "fshName": "ODIL_CarePlan",
+    "outputFile": "CarePlan-BeispielCarePlan.json",
+    "fshName": "BeispielCarePlan",
     "fshType": "Instance",
     "fshFile": "examples.fsh",
-    "startLine": 223,
-    "endLine": 255
+    "startLine": 398,
+    "endLine": 438
+  },
+  {
+    "outputFile": "CareTeam-beispielPflegeteam.json",
+    "fshName": "CareTeam_Example",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 222,
+    "endLine": 231
   },
   {
     "outputFile": "CodeSystem-code-system-himi-heimi-formular-art.json",
@@ -56,12 +64,12 @@
     "endLine": 39
   },
   {
-    "outputFile": "Composition-Odil-Composition-CarePlan.json",
-    "fshName": "Odil-Composition-CarePlan",
+    "outputFile": "Composition-Odil-Composition-UmfassendesBeispiel.json",
+    "fshName": "Odil-Composition-UmfassendesBeispiel",
     "fshType": "Instance",
     "fshFile": "examples.fsh",
-    "startLine": 279,
-    "endLine": 295
+    "startLine": 234,
+    "endLine": 250
   },
   {
     "outputFile": "Composition-Odil-Composition.json",
@@ -112,6 +120,54 @@
     "endLine": 184
   },
   {
+    "outputFile": "ServiceRequest-BeispielBlutzuckermessungServiceRequest.json",
+    "fshName": "BeispielBlutzuckermessungServiceRequest",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 309,
+    "endLine": 323
+  },
+  {
+    "outputFile": "ServiceRequest-BeispielGrundpflegeHauswirtschaftServiceRequest.json",
+    "fshName": "BeispielGrundpflegeHauswirtschaftServiceRequest",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 379,
+    "endLine": 396
+  },
+  {
+    "outputFile": "ServiceRequest-BeispielKompressionsbehandlungServiceRequest.json",
+    "fshName": "BeispielKompressionsbehandlungServiceRequest",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 325,
+    "endLine": 340
+  },
+  {
+    "outputFile": "ServiceRequest-BeispielMedikamentengabeServiceRequest.json",
+    "fshName": "BeispielMedikamentengabeServiceRequest",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 289,
+    "endLine": 307
+  },
+  {
+    "outputFile": "ServiceRequest-BeispielSonstigeMassnahmenServiceRequest.json",
+    "fshName": "BeispielSonstigeMassnahmenServiceRequest",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 362,
+    "endLine": 377
+  },
+  {
+    "outputFile": "ServiceRequest-BeispielWundversorgungServiceRequest.json",
+    "fshName": "BeispielWundversorgungServiceRequest",
+    "fshType": "Instance",
+    "fshFile": "examples.fsh",
+    "startLine": 342,
+    "endLine": 360
+  },
+  {
     "outputFile": "StructureDefinition-Folgeversorgung.json",
     "fshName": "Folgeversorgung",
     "fshType": "Extension",
@@ -133,7 +189,7 @@
     "fshType": "Profile",
     "fshFile": "ODIL_PR_Bundle.fsh",
     "startLine": 1,
-    "endLine": 60
+    "endLine": 64
   },
   {
     "outputFile": "StructureDefinition-Odil-CompositionHiMi.json",
@@ -160,12 +216,28 @@
     "endLine": 14
   },
   {
+    "outputFile": "StructureDefinition-anleitung-details.json",
+    "fshName": "AnleitungDetails",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 160,
+    "endLine": 168
+  },
+  {
     "outputFile": "StructureDefinition-blutzuckermessung-details.json",
     "fshName": "BlutzuckermessungDetails",
     "fshType": "Extension",
     "fshFile": "ODIL_PR_CarePlan.fsh",
-    "startLine": 92,
-    "endLine": 97
+    "startLine": 93,
+    "endLine": 98
+  },
+  {
+    "outputFile": "StructureDefinition-dauer-abweichung.json",
+    "fshName": "DauerAbweichung",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 26,
+    "endLine": 30
   },
   {
     "outputFile": "StructureDefinition-einschraenkungen.json",
@@ -174,6 +246,14 @@
     "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 7,
     "endLine": 11
+  },
+  {
+    "outputFile": "StructureDefinition-erst-oder-neueinstellung.json",
+    "fshName": "ErstOderNeueinstellung",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 70,
+    "endLine": 74
   },
   {
     "outputFile": "StructureDefinition-erstverordnung.json",
@@ -192,20 +272,92 @@
     "endLine": 23
   },
   {
+    "outputFile": "StructureDefinition-grundpflege-details.json",
+    "fshName": "GrundpflegeDetails",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 194,
+    "endLine": 198
+  },
+  {
+    "outputFile": "StructureDefinition-hauswirtschaftliche-versorgung-details.json",
+    "fshName": "HauswirtschaftlicheVersorgungDetails",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 200,
+    "endLine": 204
+  },
+  {
+    "outputFile": "StructureDefinition-intensiviert-insulin.json",
+    "fshName": "IntensiviertInsulin",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 76,
+    "endLine": 80
+  },
+  {
+    "outputFile": "StructureDefinition-kompressionsart-details.json",
+    "fshName": "KompressionsartDetails",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 92,
+    "endLine": 104
+  },
+  {
     "outputFile": "StructureDefinition-kompressionsbehandlung-details.json",
     "fshName": "KompressionsbehandlungDetails",
     "fshType": "Extension",
     "fshFile": "ODIL_PR_CarePlan.fsh",
-    "startLine": 99,
-    "endLine": 104
+    "startLine": 100,
+    "endLine": 105
+  },
+  {
+    "outputFile": "StructureDefinition-krankenhausvermeidungspflege.json",
+    "fshName": "Krankenhausvermeidungspflege",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 188,
+    "endLine": 192
+  },
+  {
+    "outputFile": "StructureDefinition-medikamentenbox-herrichtung.json",
+    "fshName": "MedikamentenboxHerrichtung",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 54,
+    "endLine": 58
   },
   {
     "outputFile": "StructureDefinition-medikamentengabe-details.json",
     "fshName": "MedikamentengabeDetails",
     "fshType": "Extension",
     "fshFile": "ODIL_PR_CarePlan.fsh",
-    "startLine": 81,
-    "endLine": 90
+    "startLine": 82,
+    "endLine": 91
+  },
+  {
+    "outputFile": "StructureDefinition-medikation-details.json",
+    "fshName": "MedikationDetails",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 42,
+    "endLine": 52
+  },
+  {
+    "outputFile": "StructureDefinition-odil-base-service-request.json",
+    "fshName": "ODIL_BaseServiceRequest",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 5,
+    "endLine": 24
+  },
+  {
+    "outputFile": "StructureDefinition-odil-blutzuckermessung-service-request.json",
+    "fshName": "ODIL_BlutzuckermessungServiceRequest",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 60,
+    "endLine": 68
   },
   {
     "outputFile": "StructureDefinition-odil-careplan.json",
@@ -213,7 +365,47 @@
     "fshType": "Profile",
     "fshFile": "ODIL_PR_CarePlan.fsh",
     "startLine": 38,
-    "endLine": 65
+    "endLine": 66
+  },
+  {
+    "outputFile": "StructureDefinition-odil-grundpflege-hauswirtschaft-service-request.json",
+    "fshName": "ODIL_GrundpflegeHauswirtschaftServiceRequest",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 170,
+    "endLine": 180
+  },
+  {
+    "outputFile": "StructureDefinition-odil-kompressionsbehandlung-service-request.json",
+    "fshName": "ODIL_KompressionsbehandlungServiceRequest",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 82,
+    "endLine": 90
+  },
+  {
+    "outputFile": "StructureDefinition-odil-medikamentengabe-service-request.json",
+    "fshName": "ODIL_MedikamentengabeServiceRequest",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 32,
+    "endLine": 40
+  },
+  {
+    "outputFile": "StructureDefinition-odil-sonstige-massnahmen-service-request.json",
+    "fshName": "ODIL_SonstigeMassnahmenServiceRequest",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 151,
+    "endLine": 158
+  },
+  {
+    "outputFile": "StructureDefinition-odil-wundversorgung-service-request.json",
+    "fshName": "ODIL_WundversorgungServiceRequest",
+    "fshType": "Profile",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 118,
+    "endLine": 126
   },
   {
     "outputFile": "StructureDefinition-ser.json",
@@ -228,8 +420,8 @@
     "fshName": "SonstigeMassnahmenDetails",
     "fshType": "Extension",
     "fshFile": "ODIL_PR_CarePlan.fsh",
-    "startLine": 115,
-    "endLine": 120
+    "startLine": 116,
+    "endLine": 121
   },
   {
     "outputFile": "StructureDefinition-unfall.json",
@@ -240,12 +432,28 @@
     "endLine": 29
   },
   {
+    "outputFile": "StructureDefinition-unterstuetzungspflege.json",
+    "fshName": "Unterstuetzungspflege",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 182,
+    "endLine": 186
+  },
+  {
+    "outputFile": "StructureDefinition-wundart-details.json",
+    "fshName": "WundartDetails",
+    "fshType": "Extension",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 128,
+    "endLine": 143
+  },
+  {
     "outputFile": "StructureDefinition-wundversorgung-details.json",
     "fshName": "WundversorgungDetails",
     "fshType": "Extension",
     "fshFile": "ODIL_PR_CarePlan.fsh",
-    "startLine": 106,
-    "endLine": 113
+    "startLine": 107,
+    "endLine": 114
   },
   {
     "outputFile": "ValueSet-VS-HIMI-HEIMI-KBV-FORMULAR-ART.json",
@@ -256,12 +464,36 @@
     "endLine": 20
   },
   {
+    "outputFile": "ValueSet-grundpflege-hauswirtschaft-vs.json",
+    "fshName": "GrundpflegeHauswirtschaftVS",
+    "fshType": "ValueSet",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 206,
+    "endLine": 210
+  },
+  {
     "outputFile": "ValueSet-hkp-massnahmen.json",
     "fshName": "HKPMassnahmen",
     "fshType": "ValueSet",
     "fshFile": "ODIL_PR_CarePlan.fsh",
-    "startLine": 68,
-    "endLine": 78
+    "startLine": 69,
+    "endLine": 79
+  },
+  {
+    "outputFile": "ValueSet-kompressionsstruempfe-actions.json",
+    "fshName": "KompressionsstruempfeActions",
+    "fshType": "ValueSet",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 106,
+    "endLine": 110
+  },
+  {
+    "outputFile": "ValueSet-kompressionsverbaende-actions.json",
+    "fshName": "KompressionsverbaendeActions",
+    "fshType": "ValueSet",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 112,
+    "endLine": 116
   },
   {
     "outputFile": "ValueSet-valueSet-icd-10-gm.json",
@@ -270,5 +502,13 @@
     "fshFile": "ODIL_VS_ICD10GM.fsh",
     "startLine": 7,
     "endLine": 11
+  },
+  {
+    "outputFile": "ValueSet-wundversorgungsart-vs.json",
+    "fshName": "WundversorgungsartVS",
+    "fshType": "ValueSet",
+    "fshFile": "ODIL_PR_ServiceRequests.fsh",
+    "startLine": 145,
+    "endLine": 149
   }
 ]

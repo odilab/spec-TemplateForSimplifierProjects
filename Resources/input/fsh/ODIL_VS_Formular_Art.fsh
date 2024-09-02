@@ -6,7 +6,7 @@ Description: "Ein Code-System für zusätzliche Codes, die nicht im KBV Code-Sys
 * #e04 "Fahrtkosten" "Fahrtkosten"
 * #e08 "Sehhilfe" "Sehhilfe"
 * #e08AH "Sehilfe" "Sehhilfe" 
-* #e12H "Pflegedienst" "häusliche Pflege"
+* #e12H "Pflegedienst" "Häusliche-Pflege"
 * #e15H "Hörhilfe" "Hörhilfe"
 * #e16H "Hilfsmittel" "Hilfsmittel"
 

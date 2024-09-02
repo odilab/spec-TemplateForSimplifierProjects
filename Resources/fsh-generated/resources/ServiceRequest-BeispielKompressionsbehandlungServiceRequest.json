@@ -1,0 +1,86 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "BeispielKompressionsbehandlungServiceRequest",
+  "meta": {
+    "profile": [
+      "http://fhir.odilab.de/StructureDefinition/odil-kompressionsbehandlung-service-request"
+    ]
+  },
+  "performer": [
+    {
+      "reference": "Organization/example"
+    }
+  ],
+  "occurrenceTiming": {
+    "repeat": {
+      "boundsPeriod": {
+        "start": "2023-06-01",
+        "end": "2023-08-31"
+      },
+      "frequency": 2,
+      "period": 1,
+      "periodUnit": "d"
+    }
+  },
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "code": "69695003",
+          "system": "http://snomed.info/sct",
+          "display": "Struktur des rechten Beins"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "kompressionsstruempfe",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "229070002",
+                "system": "http://snomed.info/sct",
+                "display": "Anziehen von Kompressionsstrümpfen"
+              }
+            ]
+          }
+        },
+        {
+          "url": "kompressionsverbaende",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "225369006",
+                "system": "http://snomed.info/sct",
+                "display": "Anlegen von Kompressionsverband"
+              }
+            ]
+          }
+        }
+      ],
+      "url": "http://fhir.odilab.de/StructureDefinition/kompressionsart-details"
+    }
+  ],
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "385763009",
+          "system": "http://snomed.info/sct",
+          "display": "Behandlungspflege"
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "requester": {
+    "reference": "Practitioner/example"
+  }
+}

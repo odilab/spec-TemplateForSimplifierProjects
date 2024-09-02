@@ -57,6 +57,7 @@ Description: "Dieses Profil repräsentiert die Verordnung häuslicher Krankenpfl
 * activity.detail.code from HKPMassnahmen (required)
 * activity.detail.status 1..1 MS
 * activity.detail.performer only Reference(Organization or CareTeam)
+* activity.reference only Reference(ODIL_BaseServiceRequest or ODIL_MedikamentengabeServiceRequest or ODIL_BlutzuckermessungServiceRequest or ODIL_KompressionsbehandlungServiceRequest or ODIL_WundversorgungServiceRequest or ODIL_SonstigeMassnahmenServiceRequest)
 * extension contains
     Einschraenkungen named einschraenkungen 0..1 MS and
     Erstverordnung named erstverordnung 0..1 MS and
